@@ -1,0 +1,25 @@
+{
+  "name": "jic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sallybananas/jic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sallybananas/jic/issues"
+  },
+  "homepage": "https://github.com/sallybananas/jic#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jquery-file-upload-middleware": "^0.1.8"
+  }
+}

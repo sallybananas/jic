@@ -1,0 +1,73 @@
+.nav-wrapper{
+    background-color: white;
+}
+main{
+    background-color: white !important;
+    /* background-image: url("../images/blackbgwithpattern.png");
+    background-repeat: no-repeat; */
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+p{
+    margin:0px !important;
+}
+i.icon-black {
+    color: black !important;
+}
+.brand-logo{
+    margin-top: 10px !important;
+}
+.black-text{
+    color:black !important;
+}
+.card{
+    margin-top: px;
+    max-width: 425px !important;
+    /* left: 50% !important; */
+}
+.welcome{
+    font-size: 24px;
+    align-content: center !important;
+}
+.landing-options{
+    align-content: center;
+    line-height: 20px;
+}
+.page-footer{
+    padding-top: 10px;
+}
+.footer-copyright{
+    background-color: white !important;
+    color:white;
+    font-size: 8px;
+}
+.material-form{
+    text-align: center !important;
+    margin: 0px !important;
+    /* padding: 10px !important; */
+    background: white !important;
+    max-width: 425px !important;
+    min-width: 400px !important;
+}
+.search-options{
+    padding: 0 15px 0 0;
+    line-height: 2px;
+}
+.search-result-title{
+    color:black;
+}
+.search{
+    background-color: transparent;
+}
+.modal-content{
+    padding:5px !important;
+}
+.carousel .carousel-item>img{
+    max-width: 375px !important;
+}
+.carousel-slider{
+    height: 450px !important;
+}

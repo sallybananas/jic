@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="apple-mobile-web-app-title" content="JUST IN CASE">
+
+        <title>Just in Case</title>
+
+    <!-- Material Icon CDN -->
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize CSS CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Your custom styles -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="./assets/images/logos/jicnowicon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/logos/jicnowicon180.png"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logos/jicnowicon32.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/logos/jicnowicon16.png"></link>
+        <link rel="apple-touch-startup-image" href="./assets/images/logos/jicnowicon.png">
+        <link rel="shortcut icon" href="./assets/images/logos/jicnowicon.png"></link>
+    <!-- End of head script and link tags -->
+
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        }
+      main {
+        flex: 1 0 auto;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+
+    <!-- Full Size Menu Location -->
+
+            <div class="nav-wrapper center">
+                <div class="container center">
+                    <a href="index.html" class="brand-logo center"><img class="brand-logo" src="" width="" height="50px"></a>
+                </div>
+            </div>
+
+    <!-- End of where full size menu would go -->
+
+    </header>
+
+    <main>
+    <!-- Your content here -->
+
+    <!-- Animated Gif and Main Logo Card -->
+        <div class="card z-depth-0">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <br>
+                    <img class="" src="./assets/images/logos/JICslow.gif">
+                    <br>
+                </div>
+                <div class="card-content-landing" align="center">
+                    <span class="welcome"><h4 align="center">...<span id="typed"></span></h4></span>
+
+                    <br>
+                        <div class="row">
+                            <div class="col s12"><a class="waves-effect red btn" href="tour.html"><i class="material-icons left">play_arrow</i>Take Tour</a></div>
+                            <br><br><br>
+                                <!-- Bottom Modal Trigger for Sign In -->
+                                    <div class="col s6"><a class="waves-effect black btn modal-trigger" href="#modal1"><i class="material-icons left">person</i>Sign In</a></div>
+                                        <!-- Modal Structure -->
+                                            <div id="modal1" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                  <h5>Sign into your <b style="font-size:20px"><strong>JUST<font color="red">IN</font>CASE</strong></b> account</h5>
+                                                </div>
+                                                <div class="container">
+                                                    <form class="col s12" method="post">
+                                                        <div class='row'>
+                                                            <div class='col s12'>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class='row'>
+                                                            <div class='input-field col s12'>
+                                                            <input class='validate' type='email' name='email' id='email' />
+                                                            <label for='email'>Enter your email</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class='row'>
+                                                            <div class='input-field col s12'>
+                                                            <input class='validate' type='password' name='password' id='password' />
+                                                            <label for='password'>Enter your password</label>
+                                                            </div>
+                                                            <label style='float: right;'>
+                                                                            <a class='pink-text' href='#!'><b>Forgot Password?</b></a>
+                                                                        </label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <a href="#!" class="modal-action modal-close waves-effect red btn">Go</a>
+                                                </div>
+                                            </div>
+                                            <!-- End of Modal -->
+
+                                <!-- Modal Trigger -->
+                                    <div class="col s6"><a class="waves-effect black btn modal-trigger" href="#modal2"><i class="material-icons left">person_add</i>Sign Up</a></div>
+                                <!-- Modal Structure -->
+                                    <div id="modal2" class="modal modal-fixed-footer">
+                                        <div class="modal-content">
+                                                <h5>Sign up for your FREE <b style="font-size:20px"><strong>JUST<font color="red">IN</font>CASE</strong></b> account</h5>
+                                                <hr align="center" width="50%">
+                                                <p align="left">When you sign up for an account with Just in Case, we take your security seriously. After all, we are a web app meant to help YOU, Just in Case stuff happens, so you bet we are on top of it!</p>
+                                                <br>
+                                                <p align="left">After you sign up for your personal account, you will then be guided through the addition of your important personal details first. Afterwards, you'll have the option to add details for the important people in your life. Think, kids, significant other, extended family and even friends.</p>
+                                                <br>
+                                                <p align="left">No one knows when the unthinkable will happen. Hopefully it never will! No matter what, Just in Case eases the stress of "what if". It prepares you with access to the information you might someday need, but we hope you never will. This isn't an act of fear. It is an act of preparation!</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="#modal3" class="modal-action modal-close waves-effect red btn modal-trigger">Get Started!</a>
+                                        </div>
+                                    </div>
+
+                                    <div id="modal3" class="modal modal-fixed-footer">
+                                            <div class="modal-content">
+                                                    <h5>Fill me out ... </h5>
+                                                        <div id="register" class="col s12">
+                                                            <form class="col s12">
+                                                                <div class="form-container">
+                                                                    <div class="row">
+                                                                        <div class="input-field col s6">
+                                                                            <input id="last_name" type="text" class="validate">
+                                                                            <label for="last_name">First Name</label>
+                                                                        </div>
+                                                                        <div class="input-field col s6">
+                                                                            <input id="last_name" type="text" class="validate">
+                                                                            <label for="last_name">Last Name</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="input-field col s12">
+                                                                            <input id="email" type="email" class="validate">
+                                                                            <label for="email">Email</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="input-field col s12">
+                                                                            <input id="email-confirm" type="email" class="validate">
+                                                                            <label for="email-confirm">Email Confirmation</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="input-field col s12">
+                                                                            <input id="password" type="password" class="validate">
+                                                                            <label for="password">Password</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="input-field col s12">
+                                                                            <input id="password-confirm" type="password" class="validate">
+                                                                            <label for="password-confirm">Password Confirmation</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" name="action"><a href="#!" class="modal-action modal-close waves-effect red btn">Sign me up!</a></button>
+                                                    </div>
+                                    </div>
+                                <br>
+                                <br>
+                                <br>
+                        </div>
+                    <br>
+                    <img class="landing-logo" src="" width="80%" height"">
+                </div>
+                <!-- Content only shown on click of the animated gif -->
+                <!-- <div class="card-reveal">
+                    <span class=" card-title slide-logo"><i class="material-icons right close">close</i></span>
+                    <p align="left">Connect to the power of the Crwd in your job search.<br>
+                        <br>For years, job searches and postings have been run by the companies looking for help. Crwd Hire turns this old model on its head and puts the power in the hands of the Crwd.
+                        <br>
+                        <br>Person to person networking has always been the best way to find a job. With Crwd Hire the Crwd takes the power back, and makes networking, Crwd powered!</p>
+
+                        <img src="./assets/images/worlddots.png" width="100%">
+                </div> -->
+            <!-- <br> -->
+        </div>
+    <!-- End of hidden card content -->
+
+    <div class="fixed-action-btn toolbar ">
+            <a class="btn-floating pulse btn-large red disabled">
+            <i class="large material-icons">menu</i>
+            </a>
+            <ul>
+            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">home</i></a></li>
+            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">add</i></a></li>
+            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_list_bulleted</i></a></li>
+            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer white">
+        <!-- <div class="container"> -->
+            <!-- <div class="row"> -->
+                <!-- Landing Page icons on the bottom -->
+                <!-- <div class="landing-options" align="center">
+
+                    <a href="/search"><img src="./assets/images/icons/search.png"></a>
+
+                    <a href="addform.html"><img src="./assets/images/icons/add.png"></a>
+                </div> -->
+            <!-- <div class="col s12 m4 l6">
+                <h5 class="black-text">Second Footer Content</h5>
+                <p class="grey-text">You can use rows and columns here to organize your footer content.</p>
+            </div> -->
+            <!-- </div>
+        </div> -->
+
+    <div class="footer-copyright">
+        <div class="container grey-text" align="center">
+          © 2018 Copyright Redpoint Media LLC
+        <!-- <a class="grey-text right" href="#!">More Links</a> -->
+        </div>
+    </div>
+
+    </footer>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- Materialize JS CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- Local JS files -->
+        <script src="./assets/js/index.js"></script>
+        <script src="./assets/js/type.js"></script>
+
+</body>
+</html>

@@ -18,14 +18,14 @@ i.icon-black {
     color: black !important;
 }
 .brand-logo{
-    margin-top: 10px !important;
+    margin-top: 1px !important;
 }
 .black-text{
     color:black !important;
 }
 .card{
     margin-top: px;
-    max-width: 425px !important;
+    max-width: 400px !important;
     /* left: 50% !important; */
 }
 .welcome{
@@ -70,4 +70,11 @@ i.icon-black {
 }
 .carousel-slider{
     height: 450px !important;
+}
+.pulse::before{
+animation-iteration-count: 5 !important;
+}
+.card-action{
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
 }

@@ -25,6 +25,7 @@ i.icon-black {
 }
 .card{
     margin-top: px;
+    width: 390px;
     max-width: 400px !important;
     /* left: 50% !important; */
 }
@@ -72,9 +73,15 @@ i.icon-black {
     height: 450px !important;
 }
 .pulse::before{
-animation-iteration-count: 5 !important;
-}
+    animation-iteration-count: 5 !important;
+    }
 .card-action{
     padding-top: 2px !important;
     padding-bottom: 2px !important;
+}
+.card-content{
+    padding-bottom: 10px !important;
+}
+.materialize-textarea{
+    margin-bottom: 0px !important;
 }

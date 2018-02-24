@@ -64,6 +64,7 @@ app.get('/login', function (req, res) {
     res.render('login');
 });
 
+
 app.post('/login', function (req, res) {
     console.log(Users);
     if (!req.body.email || !req.body.password) {

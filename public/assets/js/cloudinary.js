@@ -1,4 +1,4 @@
-var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/just-in-case/upload';
+var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/just-in-case/upload/w_100,h_190,c_fill,g-auto';
 var CLOUDINARY_UPLOAD_PRESET = 'tsabsfyg';
 
 var imgPreview = document.getElementById('profileImage2');

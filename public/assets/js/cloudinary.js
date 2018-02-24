@@ -1,8 +1,8 @@
-var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/just-in-case/upload/w_100,h_190,c_fill,g-auto';
-var CLOUDINARY_UPLOAD_PRESET = 'tsabsfyg';
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/just-in-case/upload/w_100,h_190,c_fill,g-auto';
+const CLOUDINARY_UPLOAD_PRESET = 'tsabsfyg';
 
-var imgPreview = document.getElementById('profileImage2');
-var fileUpload = document.getElementById('profileImage');
+const imgPreview = document.getElementById('profileImage2');
+const fileUpload = document.getElementById('profileImage');
 
 fileUpload.addEventListener('change', function (event) {
     var file = event.target.files[0];

@@ -1,11 +1,11 @@
-var express = require("express");
-var upload = require('jquery-file-upload-middleware');
-var bodyParser = require("body-parser");
-var app = express();
-var multer = require('multer');
-var upload = multer(); 
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
+const express = require("express");
+const upload = require('jquery-file-upload-middleware');
+const bodyParser = require("body-parser");
+const app = express();
+const multer = require('multer');
+const upload = multer(); 
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 //Express sessions
 app.set('view engine', 'pug');
@@ -19,7 +19,7 @@ app.use(upload.array());
 app.use(cookieParser());
 app.use(session({ secret: "Your secret key" }));
 
-var Users = [];
+let Users = [];
 
 app.get('/signup', function (req, res) {
     console.log("signed up");

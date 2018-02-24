@@ -19,6 +19,7 @@ i.icon-black {
 }
 .brand-logo{
     margin-top: 1px !important;
+    align-self: center;
 }
 .black-text{
     color:black !important;

@@ -64,7 +64,8 @@
             <div id="add-modal" class="modal">
               <div class="modal-content">
                 <h4 align="center">Lets get started</h4>
-                <p>First, we will walk you through adding the most basic bits of personal information. Afterwards, you will have the ability to add additional infomation to your own profile, OR, begin adding info for the important people in your life.</p>
+                <h5>First, we will walk you through adding the most basic bits of personal information.<br><br>Afterwards, you will have the ability to add additional information to your own profile, OR, begin adding info for the important people in your life.</h5>
+                
               </div>
               <div class="modal-footer">
                 <a href="#!" class="modal-action modal-close waves-effect red btn">Lets do it!</a>
@@ -72,58 +73,92 @@
             </div>
 
         <!-- Main Card -->
-        <div class="col s12 s7">
-            <div class="card horizontal">
-              <div class="card-image">
-                <img src="./assets/images/addform/addformperson.jpg">
+          <div class="col s12 s7">
+              <div class="card horizontal profile-pic">
+                <div class="card-image">
+                  <img src="./assets/images/addform/addformperson.jpg">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>Use a clear, well lit photo of your face.</p>
+                    <br>
+                    <br>
+                    <form action="#">
+                        <div class="file-field input-field">
+                          <div class="waves-effect red btn">
+                            <span><i class="material-icons">photo_camera</i></span>
+                            <input type="file">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
               </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                  <p>Use a clear, well lit photo of your face.</p>
-                  <br>
-                  <br>
-                  <form action="#">
-                      <div class="file-field input-field">
-                        <div class="waves-effect red btn">
-                          <span><i class="material-icons">photo_camera</i></span>
-                          <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text">
-                        </div>
+            </div>
+        <!-- End  -->
+        <!-- Main Card -->
+          <div class="col s12 s7">
+              <div class="card horizontal birth-date">
+                <div class="card-image">
+                  <img src="./assets/images/addform/calendar.jpg">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>When were you born?</p>
+                    <br>
+                    <br>
+                    <input type="text" class="datepicker">
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- End  -->
+        <!-- Main Card -->
+          <div class="col s12 s7">
+              <div class="card horizontal address">
+                <div class="card-image">
+                  <img src="./assets/images/addform/address.jpg">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>What is your address?</p>
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
                       </div>
-                    </form>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         <!-- End  -->
         <!-- Main Card -->
-        <div class="col s12 s7">
-            <div class="card horizontal">
-              <div class="card-image">
-                <img src="./assets/images/addform/calendar.jpg">
-              </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                  <p>When were you born?</p>
-                  <br>
-                  <br>
-                  <input type="text" class="datepicker">
+          <div class="col s12 s7">
+              <div class="card horizontal phone">
+                <div class="card-image">
+                  <img src="./assets/images/addform/phone.jpg">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>What is your phone number?</p>
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         <!-- End  -->
         <!-- Main Card -->
-        <div class="col s12 s7">
+          <div class="col s12 s7">
             <div class="card horizontal">
               <div class="card-image">
-                <img src="./assets/images/addform/address.jpg">
+                <img src="./assets/images/addform/ruler.png">
               </div>
               <div class="card-stacked">
                 <div class="card-content">
-                  <p>What is your address?</p>
+                  <p>What is your height?</p>
                   <div class="input-field col s12">
                       <textarea id="textarea1" class="materialize-textarea"></textarea>
                     </div>
@@ -131,33 +166,16 @@
               </div>
             </div>
           </div>
-        <!-- End  -->
-        <!-- Main Card -->
-        <div class="col s12 s7">
-            <div class="card horizontal">
-              <div class="card-image">
-                <img src="./assets/images/addform/phone.jpg">
-              </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                  <p>What is your phone number?</p>
-                  <div class="input-field col s12">
-                      <textarea id="textarea1" class="materialize-textarea"></textarea>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <!-- End  -->
-        <!-- Main Card -->
+      <!-- End  -->
+      <!-- Main Card -->
         <div class="col s12 s7">
           <div class="card horizontal">
             <div class="card-image">
-              <img src="./assets/images/addform/ruler.png">
+              <img src="./assets/images/addform/scale.png">
             </div>
             <div class="card-stacked">
               <div class="card-content">
-                <p>What is your height?</p>
+                <p>What is your weight?</p>
                 <div class="input-field col s12">
                     <textarea id="textarea1" class="materialize-textarea"></textarea>
                   </div>
@@ -165,33 +183,33 @@
             </div>
           </div>
         </div>
-      <!-- End  -->
-      <!-- Main Card -->
+    <!-- End  -->
+    <!-- Main Card -->
       <div class="col s12 s7">
         <div class="card horizontal">
           <div class="card-image">
-            <img src="./assets/images/addform/scale.png">
+            <img src="./assets/images/addform/hair.png">
           </div>
           <div class="card-stacked">
             <div class="card-content">
-              <p>What is your weight?</p>
+              <p>What is your hair color?</p>
               <div class="input-field col s12">
                   <textarea id="textarea1" class="materialize-textarea"></textarea>
                 </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     <!-- End  -->
     <!-- Main Card -->
     <div class="col s12 s7">
       <div class="card horizontal">
         <div class="card-image">
-          <img src="./assets/images/addform/hair.png">
+          <img src="./assets/images/addform/eye.png">
         </div>
         <div class="card-stacked">
           <div class="card-content">
-            <p>What is your hair color</p>
+            <p>What is your eye color?</p>
             <div class="input-field col s12">
                 <textarea id="textarea1" class="materialize-textarea"></textarea>
               </div>

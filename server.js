@@ -3,7 +3,7 @@ const upload = require('jquery-file-upload-middleware');
 const bodyParser = require("body-parser");
 const app = express();
 const multer = require('multer');
-const upload = multer(); 
+// const upload = multer(); 
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 

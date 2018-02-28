@@ -50,19 +50,3 @@ $('.datepicker').pickadate({
 	close: 'Ok',
 	closeOnSelect: false // Close upon selecting a date,
 });
-
-var options = [
-	{selector: '.profile-pic', offset: 50, callback: function(el) {
-	  Materialize.toast("This is our ScrollFire Demo!", 1500 );
-	} },
-	{selector: '.birth-date', offset: 205, callback: function(el) {
-	  Materialize.toast("Please continue scrolling!", 1500 );
-	} },
-	{selector: '.address', offset: 400, callback: function(el) {
-	  Materialize.showStaggeredList($(el));
-	} },
-	{selector: '.phone', offset: 500, callback: function(el) {
-	  Materialize.fadeInImage($(el));
-	} }
-  ];
-  Materialize.scrollFire(options);

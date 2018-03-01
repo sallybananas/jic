@@ -81,7 +81,7 @@ module.exports = function (app) {
         console.log("we hit /profile route: ",  req.body);
 
         db.Profile.create({
-            userHair: req.body.userHair
+            hair: req.body.hair
 
             // jobUnknownTime: false
         }).then(function (results) {

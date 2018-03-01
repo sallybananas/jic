@@ -82,6 +82,8 @@ i.icon-black {
 }
 .card-content{
     padding-bottom: 2px !important;
+    padding-top: 2px !important;
+    padding-left: 2px !important;
 }
 .materialize-textarea{
     margin-bottom: 0px !important;

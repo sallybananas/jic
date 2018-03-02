@@ -88,3 +88,6 @@ i.icon-black {
 .materialize-textarea{
     margin-bottom: 0px !important;
 }
+.collapsible-body{
+    padding-top: 5px !important;
+}

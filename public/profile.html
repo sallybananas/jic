@@ -64,75 +64,110 @@
         <div class="row">
             <div class="col s3">
                 <div class="card horizontal">
-                <div class="card-image">
-                    <img src="./assets/images/profile/you.JPG">
-                </div>
-            <!-- </div>
-        <div class="row">-->
-            <div class="col s9">
-                <div class="card-stacked">
-                <div class="card-content">
-                    <h5 class="your-name">JoEllen D. Giani</h5>
-                    <hr>
-                    <!-- Basic Info -->
-                    <div class="row">
-                        <div class="col s6">
-                            <p>DOB: 12/7/80</p>
-                            <p>Height: 5' 9"</p>
-                            <p>Hair: Brown</p>
+                    <div class="card-image">
+                        <img src="./assets/images/profile/you.JPG">
+                    </div>
+                    <div class="col s9">
+                        <div class="card-stacked">
+                        <div class="card-content">
+                            <h5 class="your-name">JoEllen D. Giani</h5>
+                            <!-- <div class="divider"></div> -->
+                            <!-- Basic Tier 1 Info -->
+                            <div class="row">
+                                <div class="col s6">
+                                    <p>DOB: 12/7/80</p>
+                                    <p>Height: 5' 9"</p>
+                                    <p>Hair: Brown</p>
+                                </div>
+                                <div class="col s6">
+                                    <p>AGE: 36</p>
+                                    <p>Weight: 150 lbs</p>
+                                    <p>Eye: Brown</p>
+                                </div>
+                            </div>
+                            <!-- end T1 content-->
+                            <div class="divider"></div>
+                            <!-- Tier 2 Info -->
+                            <div class="row">
+                                <div class="col s3">
+                                    <p>Email:</p>
+                                    <p>Phone:</p>
+                                    <p>Address:</p>
+                                </div>
+                                <div class="col s9">
+                                    <p>joellendgiani@gmail.com</p>
+                                    <p>702-493-5636</p>
+                                    <p>189 Morningside Dr.<br>
+                                    Farmington UT, 84025</p>
+                                </div>
+                            </div>
+                            <!-- end T2 content -->
                         </div>
-                        <div class="col s6">
-                            <p>AGE: 36</p>
-                            <p>Weight: 150 lbs</p>
-                            <p>Eye: Brown</p>
                         </div>
                     </div>
-                    <!-- end -->
-                    <hr>
-                    <!-- Tier 2 Info -->
-                    <div class="row">
-                        <div class="col s3">
-                            <p>Email:</p>
-                            <p>Phone:</p>
-                            <p>Address:</p>
-                        </div>
-                        <div class="col s9">
-                            <p>joellendgiani@gmail.com</p>
-                            <p>702-493-5636</p>
-                            <p>189 Morningside Dr.<br>
-                            Farmington UT, 84025</p>
-                        </div>
-                    </div>
-                    <!-- end -->
                 </div>
-                </div>
-              </div>
-            </div>
           </div>
         <!-- Tier 3 Info -->
-                    <div class="row">
-                        <div class="col s12">
-                        <ul class="collapsible popout" data-collapsible="accordion">
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons">bookmark</i>Third Tier Indformation</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons">bookmark</i>Fourth Tier information</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons">bookmark</i>Fifth Tier Information</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons">bookmark</i>Sixth Tier Information</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                            </li>
-                        </ul>
+        <div class="row">
+            <div class="col s12 profile-tiers">
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">bookmark</i>Third Tier Indformation</div>
+                    <div class="collapsible-body">
+                        <a onclick="myFunction()" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                        <br>
+                        <br>
+                        <br>
+                        <span id="edit" contenteditable="false">Lets see if this can be edited.</span>
+                        <div class="divider"></div>
+                            <br>
+                            <br>
+                        <span id="edit" contenteditable="false">Lets see if this can be edited.</span>
+                        <div class="divider"></div>
+                            <br>
+                            <br>
+                        <span id="edit" contenteditable="false">Lets see if this can be edited.</span>
+                        <div class="divider"></div>
+                            <br>
+                            <br>
+                            <a href="#!" class="btn-floating black right" type="submit" name="action"><i class="material-icons left">save</i></a>
+                            <br>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">bookmark</i>Fourth Tier information</div>
+                    <div class="collapsible-body"><span id="edit" contenteditable="true">Lets see if this can be edited.</span>
+                        <div class="divider"></div>
+                        <div class="center">
+                            <br>
+                            <a href="#!" class="modal-action modal-close waves-effect red btn"><i class="material-icons left">save</i>Save</a>
                         </div>
                     </div>
-                    <!-- end -->
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">bookmark</i>Fifth Tier Information</div>
+                    <div class="collapsible-body"><span contenteditable="true">Lets see if this can be edited.</span>
+                        <div class="divider"></div>
+                        <div class="center">
+                            <br>
+                            <a href="#!" class="modal-action modal-close waves-effect red btn"><i class="material-icons left">save</i>Save</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">bookmark</i>Sixth Tier Information</div>
+                    <div class="collapsible-body"><span contenteditable="true">Lets see if this can be edited.</span>
+                        <div class="divider"></div>
+                        <div class="center">
+                            <br>
+                            <a href="#!" class="modal-action modal-close waves-effect red btn"><i class="material-icons left">save</i>Save</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <!-- end -->
         <!-- End of Card  -->
 
         <div class="fixed-action-btn toolbar ">
@@ -141,7 +176,7 @@
             </a>
             <ul>
             <li class="waves-effect waves-light"><a href="main.html"><i class="material-icons">home</i></a></li>
-            <li class="waves-effect waves-light"><a href="add.html"><i class="material-icons">add</i></a></li>
+            <li class="waves-effect waves-light"><a href="addother.html"><i class="material-icons">add</i></a></li>
             <li class="waves-effect waves-light"><a href="resources.html"><i class="material-icons">format_list_bulleted</i></a></li>
             <li class="waves-effect waves-light"><a href="tour.html"><i class="material-icons">play_arrow</i></a></li>
             </ul>

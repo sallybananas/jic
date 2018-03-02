@@ -12,6 +12,7 @@ module.exports = function (app) {
 
     });
 
+
     app.post("/profile", profileController.insert);
 
     app.get("/main", profileController.find);

@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <!-- end T1 content-->
-                            <div class="divider"></div>
+                            <!-- <div class="divider"></div> -->
                             <!-- Tier 2 Info -->
                             <div class="row">
                                 <div class="col s3">
@@ -107,61 +107,156 @@
                     </div>
                 </div>
           </div>
-        <!-- Tier 3 Info -->
+        
         <div class="row">
-            <div class="col s12 profile-tiers">
+            <div class="col s12 profile-tiers pop">
             <ul class="collapsible popout" data-collapsible="accordion">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">bookmark</i>Third Tier Indformation</div>
+                    <!-- Tier 3 Info -->
+                    <div class="collapsible-header"><i class="material-icons">add</i>General Medical Directives</div>
                     <div class="collapsible-body">
-                        <a onclick="myFunction()" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                        <!-- 1 -->
+                        <a onclick="myFunction('dnr')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
                         <br>
                         <br>
                         <br>
-                        <span id="edit" contenteditable="false">Lets see if this can be edited.</span>
+                        <b><span>In the case of trauma and your incapacitation, do you with to be resuscitated? This is often referred to as a DNR - "DO NOT RESUSCITATE".<br><br>Do you wish  to allow the administering of CPR (cardiopulmonary resuscitation), if YOU stop breathing or YOUR heart stops beating? </span></b>
+                        <br>
+                        <br>
+                        <span style="background-color:rgba(252, 226, 80, 0.523)" id="dnr" contenteditable="false">Click the "edit" button above, delete this text, and enter "yes" if you want CPR or "no" if you DO NOT</span>
                         <div class="divider"></div>
-                            <br>
-                            <br>
-                        <span id="edit" contenteditable="false">Lets see if this can be edited.</span>
+                        <br>
+                        <br>
+                        <!-- 2 -->
+                        <a onclick="myFunction('od')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                        <br>
+                        <br>
+                        <br>
+                        <b><span>Do you wish to be an Organ Dornor?</span></b>
+                        <br>
+                        <br>
+                        <span style="background-color:rgba(252, 226, 80, 0.523)" id="od" contenteditable="false">Click the "edit" button above, delete this text, and enter "yes" if you want to donate or "no" if NOT</span>
                         <div class="divider"></div>
-                            <br>
-                            <br>
-                        <span id="edit" contenteditable="false">Lets see if this can be edited.</span>
+                        <br>
+                        <br>
+                        <!-- 3 -->
+                        <a onclick="myFunction('rel')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                        <br>
+                        <br>
+                        <br>
+                        <b><span>Do you have a religious affiliation, whose guidelines you would like followed?</span></b>
+                        <br>
+                        <br>
+                        <span style="background-color:rgba(252, 226, 80, 0.523)" id="rel" contenteditable="false">Click the "edit" button above, delete this text, and enter your "Affiliation", or "None" if none.</span>
                         <div class="divider"></div>
-                            <br>
-                            <br>
-                            <a href="#!" class="btn-floating black right" type="submit" name="action"><i class="material-icons left">save</i></a>
-                            <br>
+                        <br>
+                        <br>
+                        <span>You MUST click the SAVE button ></span><a href="#!" class="btn-floating black right" type="submit" name="action"><i class="material-icons left">save</i></a>
+                        <br>
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">bookmark</i>Fourth Tier information</div>
-                    <div class="collapsible-body"><span id="edit" contenteditable="true">Lets see if this can be edited.</span>
-                        <div class="divider"></div>
-                        <div class="center">
+                    <!-- Tier 4 Info -->
+                    <div class="collapsible-header"><i class="material-icons">add</i>Basic Medical Info</div>
+                    <div class="collapsible-body">
+                            <!-- 1 -->
+                            <a onclick="myFunction('allergies')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
                             <br>
-                            <a href="#!" class="modal-action modal-close waves-effect red btn"><i class="material-icons left">save</i>Save</a>
+                            <br>
+                            <br>
+                            <b><span>Do you have any Known Allergies?</span></b>
+                            <br>
+                            <br>
+                            <span style="background-color:rgba(252, 226, 80, 0.523)" id="allergies" contenteditable="false">Click the "edit" button above, delete this text, and enter "Known Allergies" or "None" if you DO NOT</span>
+                            <div class="divider"></div>
+                            <br>
+                            <br>
+                            <!-- 2 -->
+                            <a onclick="myFunction('meds')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                            <br>
+                            <br>
+                            <br>
+                            <b><span>Do you currently take any Prescription Medication?</span></b>
+                            <br>
+                            <br>
+                            <span style="background-color:rgba(252, 226, 80, 0.523)" id="meds" contenteditable="false">Click the "edit" button above, delete this text, and enter your "Medication" or "None" if NOT</span>
+                            <div class="divider"></div>
+                            <br>
+                            <br>
+                            <!-- 3 -->
+                            <a onclick="myFunction('blood')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                            <br>
+                            <br>
+                            <br>
+                            <b><span>What is your Blood Type?</span></b>
+                            <br>
+                            <br>
+                            <span style="background-color:rgba(252, 226, 80, 0.523)" id="blood" contenteditable="false">Click the "edit" button above, delete this text, and enter your "Blood Type", or "Unknown".</span>
+                            <div class="divider"></div>
+                            <br>
+                            <br>
+                            <span>You MUST click the SAVE button ></span><a href="#!" class="btn-floating black right" type="submit" name="action"><i class="material-icons left">save</i></a>
+                            <br>
                         </div>
-                    </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">bookmark</i>Fifth Tier Information</div>
-                    <div class="collapsible-body"><span contenteditable="true">Lets see if this can be edited.</span>
-                        <div class="divider"></div>
-                        <div class="center">
+                    <!-- Tier 5 Info -->
+                    <div class="collapsible-header"><i class="material-icons">add</i>Medical History</div>
+                    <div class="collapsible-body">
+                            <!-- 1 -->
+                            <a onclick="myFunction('surgeries')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
                             <br>
-                            <a href="#!" class="modal-action modal-close waves-effect red btn"><i class="material-icons left">save</i>Save</a>
+                            <br>
+                            <br>
+                            <b><span>Have you have any significant Past Surgeries?</span></b>
+                            <br>
+                            <br>
+                            <span style="background-color:rgba(252, 226, 80, 0.523)" id="surgeries" contenteditable="false">Click the "edit" button above, delete this text, and enter "Past Surgeries" or "None" if NOT</span>
+                            <div class="divider"></div>
+                            <br>
+                            <br>
+                            <!-- 2 -->
+                            <a onclick="myFunction('conditions')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                            <br>
+                            <br>
+                            <br>
+                            <b><span>Do you have any Doctor Diagnosed Conditions?</span></b>
+                            <br>
+                            <br>
+                            <span style="background-color:rgba(252, 226, 80, 0.523)" id="conditions" contenteditable="false">Click the "edit" button above, delete this text, and enter your "Conditions" or "None" if NOT</span>
+                            <div class="divider"></div>
+                            <br>
+                            <br>
+                            <!-- 3 -->
+                            <a onclick="myFunction('note')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                            <br>
+                            <br>
+                            <br>
+                            <b><span>Are there any other Medical Related things you'd like to remember, just in case?</span></b>
+                            <br>
+                            <br>
+                            <span style="background-color:rgba(252, 226, 80, 0.523)" id="note" contenteditable="false">Click the "edit" button above, delete this text, and enter your "Note" or "None" if NOT.</span>
+                            <div class="divider"></div>
+                            <br>
+                            <br>
+                            <span>You MUST click the SAVE button ></span><a href="#!" class="btn-floating black right" type="submit" name="action"><i class="material-icons left">save</i></a>
+                            <br>
                         </div>
-                    </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">bookmark</i>Sixth Tier Information</div>
-                    <div class="collapsible-body"><span contenteditable="true">Lets see if this can be edited.</span>
+                    <!-- Tier 6 Info -->
+                    <div class="collapsible-header"><i class="material-icons">add</i>Notes</div>
+                    <div class="collapsible-body">
+                        <a onclick="myFunction('moreNotes')" class="btn-floating black right" type="submit" name="action"><i class="material-icons">edit</i></a>
+                        <br>
+                        <br>
+                        <br>
+                        <span style="background-color:rgba(252, 226, 80, 0.523)" id="moreNotes" contenteditable="false">Click the "edit" button above, delete this text, and enter whatever you want...</span>
                         <div class="divider"></div>
-                        <div class="center">
-                            <br>
-                            <a href="#!" class="modal-action modal-close waves-effect red btn"><i class="material-icons left">save</i>Save</a>
-                        </div>
+                        <br>
+                        <br>
+                        <span>You MUST click the SAVE button ></span><a href="#!" class="btn-floating black right" type="submit" name="action"><i class="material-icons left">save</i></a>
+                        <br>
                     </div>
                 </li>
             </ul>

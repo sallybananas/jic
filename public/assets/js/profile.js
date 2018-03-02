@@ -19,14 +19,28 @@ $(document).ready(function () {
         //   return;
         // }
         // Constructing a newPost object to hand to the database
-        console.log($('#hair').val().trim())
+        // console.log($('#hair').val().trim())
 
+        var birthdate = $("#birthdate").val().trim();
+        var address = $("#address").val().trim();
+        var phone = $("#phone").val().trim();
+        var height = $("#height").val().trim();
+        var weight = $("#weight").val().trim();
         var hair = $("#hair").val().trim();
+        var eyes = $("#eyes").val().trim();
+        
 
 
         var newProfile = {
-            hair: hair
+            birthdate: birthdate,
+            address: address,
+            phone: phone,
+            height: height,
+            weight: weight,
+            hair: hair,
+            eyes: eyes
         };
+
 
         // console.log("newJob: " , newJob);
 

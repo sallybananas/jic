@@ -76,11 +76,14 @@ module.exports = function (app) {
         res.redirect('/login');
     });
 
+    // app.get("/profile", profileController.find);
+    // app.post("/profile", profileController.insert);
 
     app.post("/profile", function (req, res) {
         console.log("we hit /profile route: ",  req.body);
 
         db.Profile.create({
+            photo: req.body.photo,
             birthdate: req.body.birthdate,
             address: req.body.address,
             phone: req.body.phone,

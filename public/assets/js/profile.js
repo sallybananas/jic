@@ -21,6 +21,7 @@ $(document).ready(function () {
         // Constructing a newPost object to hand to the database
         // console.log($('#hair').val().trim())
 
+        var photo = $("#photoPreview").attr("src");
         var birthdate = $("#birthdate").val().trim();
         var address = $("#address").val().trim();
         var phone = $("#phone").val().trim();
@@ -32,6 +33,7 @@ $(document).ready(function () {
 
 
         var newProfile = {
+            photo: photo,
             birthdate: birthdate,
             address: address,
             phone: phone,

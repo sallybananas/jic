@@ -1,4 +1,4 @@
-const User = require('../mongooseModels');
+const User = require('../models');
 
 module.exports = {
     find: function(req, res) {

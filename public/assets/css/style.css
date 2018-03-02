@@ -91,3 +91,7 @@ i.icon-black {
 .collapsible-body{
     padding-top: 5px !important;
 }
+.pop{
+    max-width: 411px !important;
+    min-width: 411px !important;
+}

@@ -51,8 +51,8 @@ $('.datepicker').pickadate({
 	closeOnSelect: false // Close upon selecting a date,
 });
 
-function myFunction() {
-	console.log(document.getElementById("edit").contentEditable)
-	var x = (document.getElementById("edit").contentEditable = true)
+function myFunction(id) {
+	console.log(document.getElementById(`${id}`).contentEditable)
+	var x = (document.getElementById(`${id}`).contentEditable = true)
 
 }

@@ -62,6 +62,7 @@
   </header>
 
   <main>
+                  <form class="" id="profile" name="profile" method="POST" action="/profile"></form>
     <!-- Your content here -->
     <div>
       <!-- Modal Structure -->
@@ -91,7 +92,7 @@
               <p>Use a clear, well lit photo of your face.</p>
               <br>
               <br>
-              <form action="#">
+
                 <div class="file-field input-field">
                   <div class="waves-effect red btn">
                     <span>
@@ -103,7 +104,7 @@
                     <input class="file-path validate" type="text">
                   </div>
                 </div>
-              </form>
+
             </div>
           </div>
         </div>
@@ -120,7 +121,7 @@
               <p>When were you born?</p>
               <br>
               <br>
-              <input type="text" class="datepicker">
+              <input type="text" id="birthdate" class="datepicker">
             </div>
           </div>
         </div>
@@ -136,7 +137,7 @@
             <div class="card-content">
               <p>What is your address?</p>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <textarea id="address" class="materialize-textarea"></textarea>
               </div>
             </div>
           </div>
@@ -153,7 +154,7 @@
             <div class="card-content">
               <p>What is your phone number?</p>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <textarea id="phone" class="materialize-textarea"></textarea>
               </div>
             </div>
           </div>
@@ -170,7 +171,7 @@
             <div class="card-content">
               <p>What is your height?</p>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <textarea id="height" class="materialize-textarea"></textarea>
               </div>
             </div>
           </div>
@@ -187,7 +188,7 @@
             <div class="card-content">
               <p>What is your weight?</p>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <textarea id="weight" class="materialize-textarea"></textarea>
               </div>
             </div>
           </div>
@@ -202,13 +203,13 @@
           </div>
           <div class="card-stacked">
             <div class="card-content">
-              <form class="" id="profile" name="profile" method="POST" action="/profile">
+
                 <p>What is your hair color?</p>
                 <div class="input-field col s12">
                   <textarea id="hair" class="materialize-textarea"></textarea>
                 </div>
-                <button class="" id="submit-profile" type="submit" name="action">Submit Hair</button>
-              </form>
+                <!-- <button class="" id="submit-profile" type="submit" name="action">Submit Hair</button> -->
+
             </div>
           </div>
         </div>
@@ -224,7 +225,7 @@
             <div class="card-content">
               <p>What is your eye color?</p>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <textarea id="eyes" class="materialize-textarea"></textarea>
               </div>
             </div>
           </div>
@@ -234,8 +235,7 @@
       <!-- submit button -->
       <div class="row center">
         <div class="col s12">
-          <a class="waves-effect red btn" href="main.html">
-            <i class="material-icons left">save</i>Save</a>
+            <button class="waves-effect red btn" id="submit-profile" type="submit" name="action">Save</button>
         </div>
       </div>
       <!-- end of submit button -->
@@ -252,6 +252,7 @@
             </ul>
         </div> -->
     </div>
+    </form>
   </main>
   <!-- End Menu -->
   <!-- Footer -->

@@ -62,7 +62,7 @@
   </header>
 
   <main>
-                  <form class="" id="profile" name="profile" method="POST" action="/profile"></form>
+                  <form class="" id="profile" name="profile" method="POST" action="/profile">
     <!-- Your content here -->
     <div>
       <!-- Modal Structure -->
@@ -85,7 +85,7 @@
       <div class="col s12 s7">
         <div class="card horizontal profile-pic">
           <div class="card-image">
-            <img src="./assets/images/addform/addformperson.jpg">
+            <img id="photoPreview" src="./assets/images/addform/addformperson.jpg">
           </div>
           <div class="card-stacked">
             <div class="card-content">
@@ -98,10 +98,10 @@
                     <span>
                       <i class="material-icons">photo_camera</i>
                     </span>
-                    <input type="file">
+                    <input id="photo" type="file" accept="image/*"></input>
                   </div>
                   <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
+                    <input class="file-path validate" type="text"></input>
                   </div>
                 </div>
 
@@ -276,8 +276,10 @@
   <!-- Local JS files -->
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/type.js"></script>
-  <script src="./assets/js/cloudinary.js"></script>
+  
   <script src="./assets/js/profile.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./assets/js/cloudinary.js"></script>
 </body>
 
 </html>

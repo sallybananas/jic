@@ -95,3 +95,10 @@ i.icon-black {
     max-width: 411px !important;
     min-width: 411px !important;
 }
+.myIframe{
+    width: 400px !important;
+    height: 560px !important;
+}
+.media-heading{
+    margin-top: 0px !important;
+}

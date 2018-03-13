@@ -1,5 +1,6 @@
 const db = require("../models");
 const profileController = require("../controllers/profileController.js");
+const userController = require("../controllers/userController.js");
 
 module.exports = function (app) {
 
@@ -16,6 +17,15 @@ module.exports = function (app) {
     app.post("/profile", profileController.insert);
 
     app.get("/main", profileController.find);
+
+
+    app.post("/add", userController.insert);
+
+    app.get("/main", userController.find);
+
+
+
+    
     // console.log(res.json(data));
 
 
@@ -86,9 +96,7 @@ module.exports = function (app) {
     //     res.redirect('/login');
     // });
 
-    app.post("/profile", profileController.insert);
 
-    app.get("/main", profileController.find);
 
 
     // app.post("/profile", function (req, res) {

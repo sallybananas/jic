@@ -70,7 +70,9 @@ var ProfileSchema = new Schema({
     eyes: {
         type: String,
         allowNull: false
-    }
+    },
+    
+    User: {type: mongoose.Schema.Types.ObjectId, ref: "User"}
 
 });
 

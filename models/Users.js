@@ -12,12 +12,12 @@ var validateEmail = function(email) {
 // This is similar to a Sequelize model
 var UserSchema = new Schema({
   // `firstname` is required and of type String
-  firstname: {
+  first_name: {
     type: String,
     required: true
   },
   // `lastname` is required and of type String
-  lasttname: {
+  last_name: {
     type: String,
     required: true
   },
@@ -36,7 +36,10 @@ var UserSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+
+  Profile: [{type: mongoose.Schema.Types.ObjectId, ref: "Profile"}]
+  
 });
 
 // This creates our model from the above schema, using mongoose's model method

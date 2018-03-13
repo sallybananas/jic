@@ -44,7 +44,7 @@ $(document).ready(function () {
         };
 
 
-        // console.log("newJob: " , newJob);
+        console.log("New Profile " + JSON.stringify(newProfile))
 
         // If we're updating a post run updatePost to update a post
         // Otherwise run submitPost to create a whole new post

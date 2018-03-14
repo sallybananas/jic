@@ -8,12 +8,12 @@ var Schema = mongoose.Schema;
 var SubSchema = new Schema({
 
     // `firstname` is required and of type String
-    firstname: {
+    first_name: {
         type: String,
         required: true
     },
     // `lastname` is required and of type String
-    lasttname: {
+    last_name: {
         type: String,
         required: true
     },

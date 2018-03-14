@@ -5,84 +5,62 @@ var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
-var SubSchema = new Schema({
+var MedicalSchema = new Schema({
 
-    // `firstname` is required and of type String
-    firstname: {
+    //Resuscitate is not required and of type String
+    resuscitate: {
         type: String,
-        required: true
-    },
-    // `lastname` is required and of type String
-    lasttname: {
-        type: String,
-        required: true
+        allowNull: true
     },
 
-    //relationship is required and of type String
-    relationship: {
+    //Organ Donor is not required and of type String
+    organDonor: {
         type: String,
-        allowNull: false
+        allowNull: true
     },
 
-    //photo is required and of type String
-    photo: {
+    //religion is not required and of type String
+    religion: {
         type: String,
-        allowNull: false
+        allowNull: true
     },
 
-    //address is required and of type String
-    address: {
+    //allergies is not required and of type String
+    allergies: {
         type: String,
-        allowNull: false
+        allowNull: true
     },
 
-    //birthdate is required and of type String
-    birthdate: {
+    //blood type is not required and of type String
+    blood: {
         type: String,
-        allowNull: false
+        allowNull: true
     },
 
-    //phone number is required and of type String
-    phone: {
+    //surgeries is not required and of type String
+    surgeries: {
         type: String,
-        allowNull: false
+        allowNull: true
     },
 
-    //height is required and of type String
-    height: {
+    //diagnosed conditions is not required and of type String
+    diagnosis: {
         type: String,
-        allowNull: false
+        allowNull: true
     },
 
-    //weight is required and of type String
-    weight: {
+    //other medical items is not required and of type String
+    other: {
         type: String,
-        allowNull: false
-    },
-
-    //hair color is required and of type String
-    hair: {
-        type: String,
-        allowNull: false
-    },
-
-    //eye color is required and of type String
-    eyes: {
-        type: String,
-        allowNull: false
+        allowNull: true
     },
     
-   subprofile: [
-       {
-           type: Schema.Types.ObjectId,
-           ref: "SubProfile"
-       }
-   ]
+    Profile: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
 
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var SubProfile = mongoose.model("SubProfile", SubSchema);
+var Medical = mongoose.model("Medical", MedicalSchema);
 
 // Export the Article model
-module.exports = SubProfile;
+module.exports = Medical;

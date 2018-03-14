@@ -24,7 +24,7 @@ module.exports = function(app) {
       
     }).then(function (results) {
       console.log("results: ", results);
-      res.render("profile", { profiles: results });
+      res.render("profile", { profile: results });
     });
   
 

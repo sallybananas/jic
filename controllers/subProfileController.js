@@ -1,8 +1,8 @@
-const Profile = require('../models/profile');
+const subProfile = require('../models/subProfile');
 
 module.exports = {
     find: function(req, res) {
-        Profile.find().then(function(data) {
+        subProfile.find().then(function(data) {
         res.json(data);
         }).catch(function(err) {
         res.json(err);
@@ -11,7 +11,7 @@ module.exports = {
 
     insert: function(req, res) {
         console.log(req.body)
-        Profile.create(req.body).then(function(data) {
+        subProfile.create(req.body).then(function(data) {
         res.json(data);
         }).catch(function(err) {
         res.json(err);
@@ -19,7 +19,7 @@ module.exports = {
     },
 
     delete: function(req, res) {
-        Profile.remove({
+        subProfile.remove({
         _id: req.params.id
         }).then(function(data) {
         res.json(data);
@@ -29,7 +29,7 @@ module.exports = {
     },
 
     update: function(req, res) {
-        Profile.update({
+        subProfile.update({
         _id: req.params.id
         }).then(function(data) {
         res.json(data);

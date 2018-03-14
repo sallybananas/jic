@@ -7,21 +7,15 @@ var Schema = mongoose.Schema;
 // This is similar to a Sequelize model
 var ProfileSchema = new Schema({
 
-    // // `firstname` is required and of type String
-    // firstname: {
-    //     type: String,
-    //     required: true
-    // },
-    // // `lastname` is required and of type String
-    // lasttname: {
-    //     type: String,
-    //     required: true
-    // },
-
-    //relationship is required and of type String
-    relationship: {
+    // `firstname` is required and of type String
+    first_name: {
         type: String,
-        allowNull: false
+        required: true
+    },
+    // `lastname` is required and of type String
+    last_name: {
+        type: String,
+        required: true
     },
 
     //photo is required and of type String

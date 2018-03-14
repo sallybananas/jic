@@ -3,6 +3,6 @@
 module.exports = {
   User: require("./Users"),
   Profile: require("./profile"),
-  SubProfile: require("./SubProfile"),
+  SubProfile: require("./Medical"),
 };
 

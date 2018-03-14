@@ -4,7 +4,6 @@ const userController = require("../controllers/userController.js");
 
 module.exports = function (app) {
 
-
     var Users = [];
 
     app.get('/signup', function (req, res) {
@@ -12,7 +11,6 @@ module.exports = function (app) {
         res.render('signup');
 
     });
-
 
     app.post("/profile", profileController.insert);
 
@@ -22,13 +20,8 @@ module.exports = function (app) {
     app.post("/add", userController.insert);
 
     app.get("/main", userController.find);
-
-
-
     
     // console.log(res.json(data));
-
-
 
     // app.post('/signup', function (req, res) {
     //     console.log("signed up");
@@ -67,7 +60,6 @@ module.exports = function (app) {
     //     res.render('login');
     // });
 
-
     // app.post('/login', function (req, res) {
     //     console.log(Users);
     //     if (!req.body.email || !req.body.password) {
@@ -96,9 +88,6 @@ module.exports = function (app) {
     //     res.redirect('/login');
     // });
 
-
-
-
     // app.post("/profile", function (req, res) {
     //     console.log("we hit /profile route: ",  req.body);
 
@@ -119,6 +108,5 @@ module.exports = function (app) {
     //     });
 
     // });
-
 
 }

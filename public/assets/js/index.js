@@ -56,3 +56,11 @@ function myFunction(id) {
 	var x = (document.getElementById(`${id}`).contentEditable = true)
 
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+	$('.preloader-background').delay(1700).fadeOut('slow');
+	
+	$('.preloader-wrapper')
+		.delay(1700)
+		.fadeOut();
+});

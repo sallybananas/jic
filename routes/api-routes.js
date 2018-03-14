@@ -1,7 +1,7 @@
 const db = require("../models");
 const profileController = require("../controllers/profileController.js");
 const userController = require("../controllers/userController.js");
-const subProfileController = require("../controllers/subProfileController.js");
+const medicalController = require("../controllers/medicalController.js");
 
 module.exports = function (app) {
 
@@ -17,11 +17,11 @@ module.exports = function (app) {
 
     app.post("/add", userController.insert);
 
-    app.get("/main", userController.find);
+    app.get("/index", userController.find);
 
-    app.delete("/delete", userController.delete);
+    app.delete("/delete/user", userController.delete);
     
-    app.update("/update", userController.update);
+    app.put("/update/user", userController.update);
 
     // Profile Controller Function Calls
 
@@ -29,19 +29,19 @@ module.exports = function (app) {
 
     app.get("/main", profileController.find);
 
-    app.delete("/delete", profileController.delete);
+    app.delete("/delete/profile", profileController.delete);
     
-    app.update("/update", profileController.update);
+    app.put("/update/profile", profileController.update);
 
         // Profile Controller Function Calls
 
-    app.post("/profile", subProfileController.insert);
+    app.post("/profile", medicalController.insert);
 
-    app.get("/main", subProfileController.find);
+    app.get("/main", medicalController.find);
 
-    app.delete("/delete", subProfileController.delete);
+    app.delete("/delete/medical", medicalController.delete);
     
-    app.update("/update", subProfileController.update);
+    app.put("/update/medical", medicalController.update);
 
 
     // console.log(res.json(data));

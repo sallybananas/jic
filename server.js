@@ -12,6 +12,14 @@ var mongoose = require("mongoose");
 app.set('view engine', 'pug');
 app.set('views', './views');
 
+function userSetup(req, res, next) {
+    if (!req.session.user) {
+        req.session.user = {
+            login: false,
+        }
+    } 
+    next();
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -40,7 +48,7 @@ app.post('/signup', function (req, res) {
                 });
             }
         });
-        var newUser = { email: req.body.email, password: req.body.password };
+        var newUser = { email: req.body.email, password: req.body.password }
         Users.push(newUser);
         req.session.user = newUser;
         res.redirect('/main');

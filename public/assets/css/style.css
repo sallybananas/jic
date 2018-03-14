@@ -102,3 +102,6 @@ i.icon-black {
 .media-heading{
     margin-top: 0px !important;
 }
+.carousel-fixed-item.with-indicators {
+    bottom: 65px !important;
+}

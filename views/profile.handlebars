@@ -2,49 +2,34 @@
 
     <!-- Our content here -->
       <main>
-        <!-- screen content -->
-        <!-- Search options Sort and Filter -->
-            <div class="search-options">
-                    <br>
-                   <a href="sortandfilter.html"><img src="./assets/images/icons/filter.png"></a>
-            </div>
-        <!-- end -->
-
-            <!-- Label identifying currently visible sorting choice -->
-            <div class="search-result-title">
-                <p>⬇︎ Most recent Crwd Posts ⬇︎</p>
-            </div>
-            <!-- end -->
-        <div class="lower-screen">
-      
-                {{#each jobs}}
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-
-                        <img class="activator" src="{{this.jobImage2}}">
-                    </div>
-                    <div class="card-content">
-                        <h5>{{this.jobType}}
-                            <hr>{{this.jobTitle}}</h5>
-                        <p>{{this.jobCompany}}</p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">{{this.jobType}}
-                            <hr>{{this.jobTitle}}
-                            <i class="material-icons right close">close</i>
-                        </span>
-                        <p><h6> Description: </h6> {{this.jobDescription}}</p>
-                        <p><h6> Company: </h6> {{this.jobCompany}}</p>
-                        {{!-- <p><h6>Category: </h6>{{this.jobCategory}}</p> --}}
-                        <p><h6>Shift:</h6> {{this.jobTime}}</p>
-                        <p><h6>Phone Number:</h6> {{this.jobPhone}}</p>
-                        <p><h6>Contact:</h6> {{this.jobContact}}</p>
-                        <p><h6>Company URL: </h6>{{this.jobURL}}</p>
-
+        {{#each Profile}}
+         <div class="col s12 s7">
+            <div class="card horizontal">
+              <div class="card-image">
+                <img src="{{this.photo}}">
+              </div>
+              <div class="card-stacked">
+                <div class="card-content">
+                    <h5 class="your-name">{{this.first_name}} {{this.last_name}}</h5>
+                    <div class="row">
+                        <div class="col s6">
+                            <p>DOB: {{this.birthdate}}</p>
+                            <p>Height: {{this.height}}</p>
+                            <p>Hair: {{this.hair}}</p>
+                        </div>
+                        <div class="col s6">
+                            <p>AGE: 36</p>
+                            <p>Weight: {{this.weight}} lbs</p>
+                            <p>Eye: {{this.eyes}}</p>
+                        </div>
                     </div>
                 </div>
-                {{/each}}
-
+                <div class="">
+                    <p class="black-text text-darken-4">YOU<a href="profile.html"><i class="material-icons right tooltipped" data-position="top" data-delay="50" data-tooltip="more info">more_horiz</i></a></p>
+                </div>
+              </div>
             </div>
+          </div>
+        {{/each}}
     </main>
 

@@ -68,3 +68,33 @@ document.addEventListener("DOMContentLoaded", function(){
 $(document).ready(function(){
 	$('.tap-target').tapTarget('open');
   });
+
+$(`#new-sign-up`).on("click", function(event){
+	event.preventDefault()
+var firstNameDOM, lastNameDOM, emailDOM, emailConfirmDOM, passwordDOM, passwordConfirmDOM, user;
+
+firstNameDOM = $('#first_name').val().trim();
+lastNameDOM = $('#last_name').val().trim();
+emailDOM = $('#email1').val().trim()
+emailConfirmDOM = $('#email-confirm').val().trim();
+passwordDOM = $('#password1').val().trim()
+passwordConfirmDOM = $('#password-confirm').val().trim()
+console.log(firstNameDOM, lastNameDOM, emailDOM, emailConfirmDOM, passwordConfirmDOM, passwordDOM);
+if (emailDOM === emailConfirmDOM && passwordDOM === passwordConfirmDOM) {
+			user = {
+				first_name: firstNameDOM,
+				last_name: lastNameDOM,
+				email: emailDOM,
+				password: passwordDOM
+			}			
+			console.log(user);
+	$.post('/signup', user).then(function(res){
+		window.location.href = res
+	})
+
+}else{
+	console.log("username or email dont match");
+}
+
+
+})

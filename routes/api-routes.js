@@ -1,7 +1,7 @@
 const db = require("../models");
 const profileController = require("../controllers/profileController.js");
 const userController = require("../controllers/userController.js");
-const medicalController = require("../controllers/medicalController.js");
+const medicalController = require("../controllers/MedicalController.js");
 
 module.exports = function (app) {
 

@@ -25,7 +25,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload2.array());
 app.use(cookieParser());
-app.use(session({ secret: "Your secret key" }));
+app.use(session({ secret: "Your secret key",
+resave: true,
+saveUninitialized: true }));
 
 var PORT = process.env.PORT || 3000;
 

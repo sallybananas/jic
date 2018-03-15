@@ -18,7 +18,7 @@
                             <p>Hair: {{this.hair}}</p>
                         </div>
                         <div class="col s6">
-                            <p>AGE: 36</p>
+                            <p>AGE: </p>
                             <p>Weight: {{this.weight}} lbs</p>
                             <p>Eye: {{this.eyes}}</p>
                         </div>
@@ -30,6 +30,16 @@
               </div>
             </div>
           </div>
+          <script>
+              var age = "";
+              function calcAge(dateString) {
+                var birthday = +new Date(dateString);
+                return ~~((Date.now() - birthday) / (31557600000));
+
+                }
+                calcAge(this.birthdate);
+
+          </script>
         {{/each}}
     </main>
 

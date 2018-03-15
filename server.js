@@ -42,9 +42,19 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/jic";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
+var db = mongoose.connection;
+
+db.on('error', function(err) {
+    console.log("Mongoose Error: ", err);
+});
+
+db.once('open', function() {
+    console.log('Mongoose connection successful.');
+});
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + './public/index.html'));
-})
+});
 
 app.listen(PORT, function () {
     console.log("Listening on Port: ", PORT)

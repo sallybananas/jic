@@ -7,13 +7,9 @@ module.exports = function (app) {
 
     let Users = [];
 
-    app.get('/signup', function (req, res) {
-        console.log("signed up");
-        res.render('signup');
 
-    });
-
-    app.post('/signup', function (req, res) {
+    // app.post("/signup", userController.insert);
+    app.post('/signup', userController.insert, function (req, res) {
         console.log(req.body)
         console.log("signed up");
         if (!req.body.email || !req.body.password) {
@@ -30,10 +26,19 @@ module.exports = function (app) {
             var newUser = { email: req.body.email, password: req.body.password }
             Users.push(newUser);
             req.session.user = newUser;
+            // userController.insert;
             //res.redirect('/main');
-            res.send("add.html")
+            // window.location.href = "/add.html";
+            // res.redirect("add.html")
         }
     });
+
+    app.get("/signup", userController.find);
+    // app.get('/signup', function (req, res) {
+    //     console.log("signed up");
+    //     res.render('/signup');
+
+    // });
 
     function checkSignIn(req, res) {
         if (req.session.user) {
@@ -87,6 +92,7 @@ module.exports = function (app) {
     // User Controller Function Calls
 
     app.post("/add", userController.insert);
+    
 
     app.get("/index", userController.find);
 

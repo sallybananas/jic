@@ -1,4 +1,5 @@
 const Profile = require('../models/profile');
+const User = require('../models/Users');
 
 module.exports = {
     find: function(req, res) {

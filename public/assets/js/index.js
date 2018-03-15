@@ -89,7 +89,8 @@ if (emailDOM === emailConfirmDOM && passwordDOM === passwordConfirmDOM) {
 			}			
 			console.log(user);
 	$.post('/signup', user).then(function(res){
-		window.location.href = res
+		window.location.href = "/add.html"
+		
 	})
 
 }else{

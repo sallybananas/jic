@@ -11,7 +11,7 @@ module.exports = {
         Profile.findById(req.body.id).then(function(data) {
         // res.json(data);
         console.log(data);
-        res.redirect(301, "/updatedprofile/"+req.body.id);
+        res.render("profile", { profiles: data });
         // res.send("profile", { profiles: data });
         }).catch(function(err) {
         res.json(err);
@@ -23,7 +23,7 @@ module.exports = {
         console.log(req.body)
         Profile.create(req.body)
         .then(function(data) {
-        console.log("data: ", data);
+        console.log("Profilecontroller data: ", data);
         res.render("profile", { profiles: data } );
         }).catch(function(err) {
         res.json(err);

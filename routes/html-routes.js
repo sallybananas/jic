@@ -15,17 +15,17 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    console.log("html routes?");
+    console.log("html routes?");  
     res.render("index");
   });
   
 
   app.get("/main/:id", function (req, res) {
-    Profile.find(req.params.id)      
+    User.findByID(req.params.id)      
       
     }).then(function (results) {
       console.log("results: ", results);
-      res.render("profile", results);
+      res.render("profile", { profile: results });
     });
   
 

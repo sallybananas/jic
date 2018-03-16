@@ -13,9 +13,9 @@ var mongoose = require("mongoose");
 const path = require('path');
 
 
-//Express sessions
-app.set('view engine', 'pug');
-app.set('views', './views');
+// //Express sessions
+// app.set('view engine', 'pug');
+// app.set('views', './views');
 
 
 var PORT = process.env.PORT || 3000;

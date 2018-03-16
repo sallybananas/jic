@@ -5,5 +5,5 @@ module.exports = {
     userController: require("./userController"),
     profileController: require("./profileController"),
     medicalController: require("./medicalController"),
-  };
+    };
   

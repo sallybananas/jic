@@ -43,24 +43,34 @@ $(document).ready(function () {
             eyes: eyes
         };
 
-
+        
         console.log("New Profile " + JSON.stringify(newProfile))
+
 
         // If we're updating a post run updatePost to update a post
         // Otherwise run submitPost to create a whole new post
-        $.post("/profile", newProfile).then(function () {
-                    window.location.href = "/main.html";
+        $.post("/profile", newProfile).then(function (data) {
+                    // console.log("data from profile: ", data);
+                    // window.location.assign = "/main/"+data._id;
+                    var profileId = {id: data._id};
+                    console.log("profile id: ", profileId);
+                    // $.post("/getprofile", profileId).then(function (res) {
+                    //     console.log("Hello");
+                    //     // res.redirect(307, "profile");
+                    //     window.location.href = "localhost:3000/profile";
+         });
+                    // window.location.href = "/main/"+data._id;
 
-                });
         // submitProfile(newProfile);
         // console.log("new Job");
         // console.log("new job details: " + newJob);
+    
+
+
+        // Submits a new post and brings user to page upon completion
+
+        function submitProfile(newProfile) {
+        
+        }
     }
-
-
-    // Submits a new post and brings user to page upon completion
-
-    function submitProfile(newProfile) {
-      
-    }
-})
+});

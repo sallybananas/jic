@@ -21,11 +21,11 @@ module.exports = function(app) {
   
 
   app.get("/main/:id", function (req, res) {
-    User.findByID(req.params.id)      
+    Profile.find(req.params.id)      
       
     }).then(function (results) {
       console.log("results: ", results);
-      res.render("profile", { profile: results });
+      res.render("profile", results);
     });
   
 

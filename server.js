@@ -9,13 +9,24 @@ const MongoStore = require('connect-mongo')(session);
 
 // const cookieParser = require('cookie-parser');
 var mongoose = require("mongoose");
+
 const path = require('path');
+
 
 //Express sessions
 app.set('view engine', 'pug');
 app.set('views', './views');
 
+
 var PORT = process.env.PORT || 3000;
+
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 
 
 app.use(bodyParser.json());
@@ -27,8 +38,9 @@ app.use(upload2.array());
 
 
 
-// Serve static content for the app from the "public" directory in the application directory.
+
 app.use(express.static(path.join(__dirname + '/public/assets/')));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./routes/api-routes.js")(app);
@@ -49,6 +61,7 @@ db.on('error', function(err) {
 db.once('open', function() {
     console.log('Mongoose connection successful.');
 });
+
 
 app.set('trust proxy', 1)
 app.use(session({
@@ -94,6 +107,7 @@ var auth = function (req, res, next) {
 app.get('/', function (req, res, next) {
     console.log("Server.js Session", req.session);
     
+
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 

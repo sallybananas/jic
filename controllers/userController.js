@@ -4,7 +4,24 @@ const Profile = require('../models/profile');
 
 module.exports = {
     find: function(req, res) {
-        User.find().then(function(data) {
+        User.find({
+            where:{
+                email: req.body.email,
+                password: req.body.password
+            }
+        }).then(function(data) {
+            console.log("find controller" , data);
+            req.session.user.currentUser = {
+                id: null,
+                first_name: '',
+                last_name: '',
+                email: '',
+                email1: '',
+                password: '',
+                password1: ''
+            }
+            req.session.user.loggedIn = false;
+            req.session.user.isAdmin = false;
         res.json(data);
         }).catch(function(err) {
         res.json(err);

@@ -54,6 +54,7 @@ $(document).ready(function () {
                     // window.location.assign = "/main/"+data._id;
                     var profileId = {id: data._id};
                     console.log("profile id: ", profileId);
+                    window.location.href = "/main.html"
                     // $.post("/getprofile", profileId).then(function (res) {
                     //     console.log("Hello");
                     //     // res.redirect(307, "profile");
@@ -65,6 +66,7 @@ $(document).ready(function () {
         // console.log("new Job");
         // console.log("new job details: " + newJob);
     
+
 
 
         // Submits a new post and brings user to page upon completion

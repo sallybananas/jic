@@ -104,7 +104,13 @@ module.exports = function (app) {
 
     app.post("/profile", profileController.insert);
 
-    app.get("/main", profileController.find);
+    app.post("/getprofile", profileController.find);
+
+    app.get("/updatedprofile/:id", function(req, res) {
+        console.log("updatedprofile req.params: " , req.params.id);
+    } )
+
+    // app.get("/main/:id", profileController.find);
 
     app.delete("/delete/profile", profileController.delete);
     

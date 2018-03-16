@@ -7,6 +7,11 @@ const upload2 = multer();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 var mongoose = require("mongoose");
+var path = require ('path');
+
+
+
+
 
 //Express sessions
 app.set('view engine', 'pug');
@@ -18,8 +23,17 @@ function userSetup(req, res, next) {
             login: false,
         }
     } 
-    next();
+    // next();
 }
+
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,7 +44,14 @@ app.use(session({ secret: "Your secret key" }));
 var PORT = process.env.PORT || 3000;
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
+
+
+// app.use(express.static('layouts'));
+// Serve static content for the app from the "public" directory in the application directory.
+// app.use(express.static(process.cwd() + "/public"));
+
+
+app.use(express.static(path.join(__dirname, "public/assets")));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./routes/api-routes.js")(app);
@@ -53,7 +74,7 @@ db.once('open', function() {
 });
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + './public/index.html'));
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 app.listen(PORT, function () {

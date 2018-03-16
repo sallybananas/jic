@@ -88,12 +88,40 @@ module.exports = function (app) {
     });
 
     app.get('/tour', function (req, res) {
-
         res.sendFile(path.join(__dirname + '/../public/tour.html'));
-
     });
 
+    app.get('/add', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/add.html'));
+    });
 
+    app.get('/addother', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/addother.html'));
+    });
+
+    app.get('/amber', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/amber.html'));
+    });
+
+    app.get('/amberalerts', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/amberalerts.html'));
+    });
+
+    app.get('/childsafekit', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/childsafekit.html'));
+    });
+
+    app.get('/firstaid', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/firstaid.html'));
+    });
+
+    app.get('/poisoncontrol', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/poisoncontrol.html'));
+    });
+
+    app.get('/resources', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/resources.html'));
+    });
     /////////////////////////////////////////////////////////////////////////////////
 
     // User Controller Function Calls

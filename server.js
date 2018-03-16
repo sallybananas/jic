@@ -62,15 +62,16 @@ db.once('open', function() {
     console.log('Mongoose connection successful.');
 });
 
-
-app.get('/', function (req, res) {
-    console.log("test");
-    console.log("cookies", req.cookies);
+//Get Home Page
+app.get('/', function (req, res, next) {
     console.log("session", req.session);
-    console.log("did this console?");
-    res.sendFile(path.join(__dirname + '/public/index.html'));
     
+    res.sendFile(path.join(__dirname + '/public/index.html'), {title: 'Form Validation', success: false, errors: req.session.errors} );
+    req.session.errors = null;
 });
+
+
+
 
 
 app.listen(PORT, function () {

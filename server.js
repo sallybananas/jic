@@ -28,7 +28,7 @@ app.use(upload2.array());
 
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public/assets"));
+app.use(express.static(path.join(__dirname + '/public/assets/')));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./routes/api-routes.js")(app);

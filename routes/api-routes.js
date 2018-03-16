@@ -2,6 +2,7 @@ const db = require("../models");
 const profileController = require("../controllers/profileController.js");
 const userController = require("../controllers/userController.js");
 const medicalController = require("../controllers/MedicalController.js");
+const path = require("path");
 
 module.exports = function (app) {
 
@@ -86,6 +87,12 @@ module.exports = function (app) {
         res.redirect('/login');
     });
 
+    app.get('/tour', function (req, res) {
+
+        res.sendFile(path.join(__dirname + '/../public/tour.html'));
+
+    });
+
 
     /////////////////////////////////////////////////////////////////////////////////
 
@@ -94,7 +101,7 @@ module.exports = function (app) {
     app.post("/add", userController.insert);
     
 
-    app.get("/index", userController.find);
+    // app.get("/index", userController.find);
 
     app.delete("/delete/user", userController.delete);
     

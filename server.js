@@ -5,6 +5,8 @@ const app = express();
 const multer = require('multer');
 const upload2 = multer(); 
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
 // const cookieParser = require('cookie-parser');
 var mongoose = require("mongoose");
 const path = require('path');
@@ -15,26 +17,12 @@ app.set('views', './views');
 
 var PORT = process.env.PORT || 3000;
 
-function userSetup(req, res, next) {
-    if (!req.session.user) {
-        req.session.user = {
-            login: false,
-        }
-    } 
-    next();
-}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload2.array());
 // app.use(cookieParser());
-app.set('trust proxy', 1)
-app.use(session({
-    secret: 'jic',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
-}))
+
 
 
 
@@ -62,12 +50,51 @@ db.once('open', function() {
     console.log('Mongoose connection successful.');
 });
 
+app.set('trust proxy', 1)
+app.use(session({
+    secret: process.env.SESSIONSECRET || 'jic',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+    store: new MongoStore({ mongooseConnection: db })
+}))
+
+
+function userSetup(req, res, next) {
+    if (!req.session.user) {
+        req.session.user = {}
+        req.session.user.currentUser = {
+            id: null,
+            first_name: '',
+            last_name: '',
+            email: '',
+            email1: '',
+            password: '',
+            password1: ''
+        }
+        req.session.user.loggedIn = false;
+        req.session.user.isAdmin = false;
+    }
+    next()
+}
+
+app.use(userSetup)
+// Authentication and Authorization Middleware
+var auth = function (req, res, next) {
+    if (req.session.email === db.user.email) 
+        return next();
+
+    else
+        return res.sendStatus(401);
+};
+
+
+
 //Get Home Page
 app.get('/', function (req, res, next) {
-    console.log("session", req.session);
+    console.log("Server.js Session", req.session);
     
-    res.sendFile(path.join(__dirname + '/public/index.html'), {title: 'Form Validation', success: false, errors: req.session.errors} );
-    req.session.errors = null;
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 

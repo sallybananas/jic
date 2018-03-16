@@ -4,7 +4,12 @@ const Profile = require('../models/profile');
 
 module.exports = {
     find: function(req, res) {
-        User.find().then(function(data) {
+        User.find({
+            where:{
+                email: req.body.email,
+                password: req.body.password
+            }
+        }).then(function(data) {
         res.json(data);
         }).catch(function(err) {
         res.json(err);

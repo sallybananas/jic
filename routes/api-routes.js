@@ -139,6 +139,15 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname + '/../public/tour.html'));
     });
 
+    app.get('/tour', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/tour.html'));
+    });
+
+    app.get('/index.html', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/index.html'));
+    });
+
+
     app.get('/add.html', function (req, res) {
         res.sendFile(path.join(__dirname + '/../public/add.html'));
     });

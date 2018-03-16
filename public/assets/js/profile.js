@@ -49,7 +49,7 @@ $(document).ready(function () {
 
         // If we're updating a post run updatePost to update a post
         // Otherwise run submitPost to create a whole new post
-        $.post("/profile", newProfile).then(function (data) {
+        $.post("/api/add", newProfile).then(function (data) {
                     // console.log("data from profile: ", data);
                     // window.location.assign = "/main/"+data._id;
                     var profileId = {id: data._id};

@@ -14,7 +14,7 @@ module.exports = function (app) {
     
 
 
-    app.post("/add", userController.insert);
+    app.post("/api/add", profileController.insert);
 
 
     // app.get("/index", userController.find);
@@ -26,6 +26,8 @@ module.exports = function (app) {
     // Profile Controller Function Calls
 
     app.post("/profile", profileController.insert);
+
+    // app.get("/profile", profileController.insert);
 
     app.get("/main", profileController.find);
 
@@ -99,7 +101,7 @@ module.exports = function (app) {
     });
 
 
-    app.post('/login', userController.find)
+    app.post('/api/login', userController.find)
 
 
     // app.post('/login', function (req, res) {
@@ -126,12 +128,6 @@ module.exports = function (app) {
         req.session.destroy(function () {
             console.log("user logged out.")
         });
-        res.redirect('/login');
-    });
-
-    app.use('/main', function (err, req, res, next) {
-        console.log(err);
-        //User should be authenticated! Redirect him to log in.
         res.redirect('/login');
     });
 
@@ -312,5 +308,9 @@ module.exports = function (app) {
     //     });
 
     // });
+    
+    app.get("*", function (req, res) {
+        res.redirect("/index.html")
+    });
 
 }

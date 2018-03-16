@@ -105,7 +105,7 @@ $(`#sign-in`).on("click", function (event) {
 		password: $("#password").val().trim()
 	}
 
-	$.post('/login', user).then(function (res) {
+	$.post('/api/login', user).then(function (res) {
 		window.location.href = "/main.html"
 
 	})

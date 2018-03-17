@@ -37,7 +37,6 @@ $.get("/api/session").then(function (session) {
       cardContentDiv.append(cardContentdelete).append(cardContentH5).append(cardContentRow)
       cardStackedDiv.append(cardContentDiv).append(cardContentLastDiv)
   
-  
       cardDiv.append(cardImgDiv).append(cardStackedDiv)
       $(`#cardStuff`).append(cardDiv)
   
@@ -55,7 +54,6 @@ function calulateAge(dateString) {
     age--;
   }
   return age;
-
 }
 //sudo request made to backend for user
 // var user = {
@@ -98,3 +96,4 @@ function calulateAge(dateString) {
   //       </div>
   //     </div>
   //   </div>
+  

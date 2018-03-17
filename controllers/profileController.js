@@ -2,8 +2,7 @@ const Profile = require('../models/profile');
 const User = require('../models/Users');
 const exphbs = require("express-handlebars");
 
-
-
+// Functions for the MVC user db
 module.exports = {
     find: function(req, res) {
         // console.log(req);
@@ -32,7 +31,7 @@ module.exports = {
     },
 
     delete: function(req, res) {
-        Profile.remove({
+        db.Profile.remove({
         _id: req.params.id
         }).then(function(data) {
         res.json(data);

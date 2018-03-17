@@ -14,10 +14,25 @@ module.exports = function (app) {
     
 
 
-    app.post("/api/add", profileController.insert);
+    app.post("/api/add/:userId", function (req, res) {
+        console.log(req.body)
+        db.Profile.create(req.body)
+            .then(function (data) {
+                console.log("Profilecontroller data: ", data);
+
+                return db.User.findOneAndUpdate({_id: req.params.userId}, { $push: { Profile: data._id } }, { new: true })
+            }).then(function (userProfileData) {
+                res.json(userProfileData)
+            }).catch(function (err) {
+                res.json(err);
+            });
+    });
 
 
     // app.get("/index", userController.find);
+    app.get("/api/session", function (req, res) {
+        res.json(req.session.user)
+    });
 
     app.delete("/delete/user", userController.delete);
 
@@ -29,7 +44,7 @@ module.exports = function (app) {
 
     // app.get("/profile", profileController.insert);
 
-    app.get("/main", profileController.find);
+    app.get("/api/main/:userId", profileController.find);
 
     app.delete("/delete/profile", profileController.delete);
 

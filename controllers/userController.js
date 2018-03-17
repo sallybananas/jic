@@ -4,25 +4,22 @@ const Profile = require('../models/profile');
 
 module.exports = {
     find: function(req, res) {
-        User.find({
-            where:{
-                email: req.body.email,
-                password: req.body.password
-            }
-        }).then(function(data) {
+        User.findOne({
+            email: req.body.email,
+            password: req.body.password
+             }).then(function(data) {
             console.log("find controller" , data);
             req.session.user.currentUser = {
-                id: null,
-                first_name: '',
-                last_name: '',
-                email: '',
-                email1: '',
-                password: '',
-                password1: ''
+                id: data._id,
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email,
             }
-            req.session.user.loggedIn = false;
+            req.session.user.loggedIn = true;
             req.session.user.isAdmin = false;
-        res.json(data);
+            console.log(req.session);
+
+        res.json(req.session.user);
         }).catch(function(err) {
         res.json(err);
         });
@@ -31,6 +28,15 @@ module.exports = {
     insert: function(req, res) {
         console.log(req.body)
         User.create(req.body).then(function(data) {
+            console.log(data, "coming from userlogin");
+            req.session.user.currentUser = {
+                id: data._id,
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email,
+            }
+            req.session.user.loggedIn = true;
+            req.session.user.isAdmin = false;
         res.json(data);
         }).catch(function(err) {
         res.json(err);

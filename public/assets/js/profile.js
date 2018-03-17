@@ -1,7 +1,11 @@
 $(document).ready(function () {
 
     // POST route for saving a new post
-
+    var sessionUser = {}
+    $.get('/api/session', function(res){
+        sessionUser = res;
+        console.log(sessionUser, 'this is session user');
+    })
 
 
     // Adding an event listener for when the form is submitted
@@ -49,7 +53,7 @@ $(document).ready(function () {
 
         // If we're updating a post run updatePost to update a post
         // Otherwise run submitPost to create a whole new post
-        $.post("/api/add", newProfile).then(function (data) {
+        $.post(`/api/add/${sessionUser.currentUser.id}`, newProfile).then(function (data) {
                     // console.log("data from profile: ", data);
                     // window.location.assign = "/main/"+data._id;
                     var profileId = {id: data._id};

@@ -8,16 +8,20 @@ var Schema = mongoose.Schema;
 var ProfileSchema = new Schema({
 
     // `firstname` is required and of type String
-    // first_name: {
-    //     type: String,
-    //     required: true
-    // },
+    first_name: {
+        type: String,
+        required: false
+    },
     // `lastname` is required and of type String
-    // last_name: {
-    //     type: String,
-    //     required: true
-    // },
-
+    last_name: {
+        type: String,
+        required: false
+    },
+    
+    relationship: {
+        type: String,
+        required: false
+    },
     //photo is required and of type String
     photo: {
         type: String,

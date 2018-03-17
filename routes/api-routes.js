@@ -8,11 +8,8 @@ module.exports = function (app) {
 
     let Users = [];
 
-
     // app.post("/signup", userController.insert);
     app.post('/signup', userController.insert)
-    
-
 
     app.post("/api/add/:userId", function (req, res) {
         console.log(req.body)
@@ -27,7 +24,6 @@ module.exports = function (app) {
                 res.json(err);
             });
     });
-
 
     // app.get("/index", userController.find);
     app.get("/api/session", function (req, res) {
@@ -115,9 +111,7 @@ module.exports = function (app) {
         res.render('login');
     });
 
-
     app.post('/api/login', userController.find)
-
 
     // app.post('/login', function (req, res) {
     //     console.log("users", Users);
@@ -135,9 +129,6 @@ module.exports = function (app) {
     //         res.render('login', { message: "Invalid credentials!" });
     //     }
     // });
-
-
-
 
     app.get('/logout', function (req, res) {
         req.session.destroy(function () {
@@ -157,7 +148,6 @@ module.exports = function (app) {
     app.get('/index.html', function (req, res) {
         res.sendFile(path.join(__dirname + '/../public/index.html'));
     });
-
 
     app.get('/add.html', function (req, res) {
         res.sendFile(path.join(__dirname + '/../public/add.html'));
@@ -210,7 +200,6 @@ module.exports = function (app) {
     // // Profile Controller Function Calls
 
     // app.post("/profile", profileController.insert);
-
 
     app.post("/getprofile", profileController.find);
 

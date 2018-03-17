@@ -5,4 +5,3 @@ module.exports = {
   Profile: require("./profile"),
   SubProfile: require("./Medical"),
 };
-

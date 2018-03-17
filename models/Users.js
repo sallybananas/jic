@@ -11,11 +11,13 @@ var validateEmail = function(email) {
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 var UserSchema = new Schema({
+
   // `firstname` is required and of type String
   first_name: {
     type: String,
     required: true
   },
+
   // `lastname` is required and of type String
   last_name: {
     type: String,

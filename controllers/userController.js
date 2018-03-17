@@ -1,7 +1,6 @@
 const User = require('../models/Users');
 const Profile = require('../models/profile');
 
-
 module.exports = {
     find: function(req, res) {
         User.findOne({

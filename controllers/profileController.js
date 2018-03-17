@@ -32,7 +32,7 @@ module.exports = {
     },
 
     delete: function(req, res) {
-        Profile.remove({
+        db.Profile.remove({
         _id: req.params.id
         }).then(function(data) {
         res.json(data);

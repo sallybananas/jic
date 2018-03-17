@@ -7,7 +7,6 @@ $(document).ready(function () {
         console.log(sessionUser, 'this is session user');
     })
 
-
     // Adding an event listener for when the form is submitted
     $("#submit-profile").on("click", function (event) {
         console.log("function handle submit works");
@@ -33,8 +32,6 @@ $(document).ready(function () {
         var weight = $("#weight").val().trim();
         var hair = $("#hair").val().trim();
         var eyes = $("#eyes").val().trim();
-        
-
 
         var newProfile = {
             photo: photo,
@@ -47,7 +44,6 @@ $(document).ready(function () {
             eyes: eyes
         };
 
-        
         console.log("New Profile " + JSON.stringify(newProfile))
 
 
@@ -69,9 +65,6 @@ $(document).ready(function () {
         // submitProfile(newProfile);
         // console.log("new Job");
         // console.log("new job details: " + newJob);
-    
-
-
 
         // Submits a new post and brings user to page upon completion
 

@@ -18,7 +18,6 @@ module.exports = function(app) {
     console.log("html routes?");  
     res.render("index");
   });
-  
 
   app.get("/main/:id", function (req, res) {
     User.findByID(req.params.id)      
@@ -27,7 +26,6 @@ module.exports = function(app) {
       console.log("results: ", results);
       res.render("profile", { profile: results });
     });
-  
 
 //   app.get("/search", function (req, res) {
 //     db.Job.findAll({
@@ -62,5 +60,4 @@ module.exports = function(app) {
 //   app.get("/authors", function(req, res) {
 //     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
 //   });
-
 };

@@ -7,7 +7,6 @@ $(document).ready(function () {
     console.log(sessionUser, 'this is session user');
   })
 
-
   // Adding an event listener for when the form is submitted
   $("#submit-profile").on("click", function (event) {
     console.log("function handle submit works");
@@ -37,8 +36,6 @@ $(document).ready(function () {
     var lastName = $("#lastName").val().trim();
     var relationship = $("#relationship").val().trim();
 
-
-
     var newProfile = {
       first_name: firstName,
       last_name: lastName,
@@ -53,9 +50,7 @@ $(document).ready(function () {
       eyes: eyes
     };
 
-
     console.log("New Profile " + JSON.stringify(newProfile))
-
 
     // If we're updating a post run updatePost to update a post
     // Otherwise run submitPost to create a whole new post
@@ -75,9 +70,6 @@ $(document).ready(function () {
     // submitProfile(newProfile);
     // console.log("new Job");
     // console.log("new job details: " + newJob);
-
-
-
 
     // Submits a new post and brings user to page upon completion
 

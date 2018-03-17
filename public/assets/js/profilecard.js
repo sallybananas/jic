@@ -1,37 +1,33 @@
-console.log("yo");
+
 var user
 //grab id from session
 $.get("/api/session").then(function (session) {
   console.log(session)
   user = session;
-  $.get(`/api/main/${user.currentUser.id}`).then(function (userData) {
+  $.get(`/api/profile/:userData.Profile._id`).then(function (userData) {
     
-    for (var i = 0; i < userData.Profile.length; i++) {
+    
       var cardDiv = $(`<div class="card horizontal"></div>`)
-      var cardImgDiv = $(`<div class="card-image"></div>`).append(`<img src="${userData.Profile[i].photo}">`)
+      var cardImgDiv = $(`<div class="card-image"></div>`).append(`<img src="${userData.Profile.photo}">`)
       var cardStackedDiv = $(`<div class="card-stacked"></div>`)
   
       var cardContentDiv = $(`<div class="card-content"></div>`)
-<<<<<<< HEAD
-      var cardContentdelete = $(`<a class='delete' <i class="material-icons small right tooltipped" data-position="top" data-delay="50" data-tooltip="Delete my Account" data-id="${userData.Profile[i]._id}" >remove_circle</i></a>`)
-=======
-      var cardContentdelete = $(`<i class="material-icons small right tooltipped delete" data-position="top" id="test" data-delay="50" data-tooltip="Delete my Account" data-id="${userData.Profile[i]._id}" >remove_circle</i>`)
->>>>>>> 81aa290708707af029a40cab2af73837baf6f3ac
-      var cardContentH5 = $(`<h5 class="your-name">${userData.Profile[i].first_name ? userData.Profile[i].first_name : userData.first_name} ${userData.Profile[i].last_name ? userData.Profile[i].last_name : userData.last_name}</h5>`)
+      var cardContentdelete = $('<i class="material-icons small right tooltipped" data-position="top" data-delay="50" data-tooltip="Delete my Account" >remove_circle</i>')
+      var cardContentH5 = $(`<h5 class="your-name">${userData.Profile.first_name ? userData.Profile.first_name : userData.first_name} ${userData.Profile.last_name ? userData.Profile.last_name : userData.last_name}</h5>`)
       var cardContentRow = $(`<div class="row"></div>`)
   
       var cardContentRowDiv1 = $(`<div class="col s6"></div>`)
-      var cardContentRowDiv1P1 = $(`<p>DOB: ${userData.Profile[i].birthdate}</p>`)
-      var cardContentRowDiv1P2 = $(`<p>Height: ${userData.Profile[i].height}</p>`)
-      var cardContentRowDiv1P3 = $(`<p>Hair: ${userData.Profile[i].hair}</p>`)
+      var cardContentRowDiv1P1 = $(`<p>DOB: ${userData.Profile.birthdate}</p>`)
+      var cardContentRowDiv1P2 = $(`<p>Height: ${userData.Profile.height}</p>`)
+      var cardContentRowDiv1P3 = $(`<p>Hair: ${userData.Profile.hair}</p>`)
   
       var cardContentRowDiv2 = $(`<div class="col s6"></div>`)
-      var cardContentRowDiv2P1 = $(`<p>AGE: ${calulateAge(userData.Profile[i].birthdate)}</p>`)
-      var cardContentRowDiv2P2 = $(`<p>Weight: ${userData.Profile[i].weight}</p>`)
-      var cardContentRowDiv2P3 = $(`<p>Eye: ${userData.Profile[i].eyes}</p>`)
-      var cardContentRowDiv2P4 = $(`<p>Relationship: ${userData.Profile[i].relationship ? userData.Profile[i].relationship : "Account Owner"}</p>`)
+      var cardContentRowDiv2P1 = $(`<p>AGE: ${calulateAge(userData.Profile.birthdate)}</p>`)
+      var cardContentRowDiv2P2 = $(`<p>Weight: ${userData.Profile.weight}</p>`)
+      var cardContentRowDiv2P3 = $(`<p>Eye: ${userData.Profile.eyes}</p>`)
+      var cardContentRowDiv2P4 = $(`<p>Relationship: ${userData.Profile.relationship ? userData.Profile.relationship : "Account Owner"}</p>`)
   
-      var cardContentLastDiv = $(`<p class="black-text text-darken-4"><a href="profile.html"><i class="material-icons right tooltipped" data-position="top" data-delay="50" data-tooltip="more info" data-id="${userData.Profile[i]._id}">more_horiz</i></a></p>`)
+      var cardContentLastDiv = $(`<p class="black-text text-darken-4"><a href="profile.html"><i class="material-icons right tooltipped" data-position="top" data-delay="50" data-tooltip="more info">more_horiz</i></a></p>`)
   
       cardContentRowDiv1.append(cardContentRowDiv1P1).append(cardContentRowDiv1P2).append(cardContentRowDiv1P3)
       cardContentRowDiv2.append(cardContentRowDiv2P1).append(cardContentRowDiv2P2).append(cardContentRowDiv2P3).append(cardContentRowDiv2P4)
@@ -44,8 +40,7 @@ $.get("/api/session").then(function (session) {
       cardDiv.append(cardImgDiv).append(cardStackedDiv)
       $(`#cardStuff`).append(cardDiv)
   
-    }
-  })
+    })
 })
 //query the db Prfile for users id
 //generate a card with data
@@ -101,23 +96,3 @@ function calulateAge(dateString) {
   //     </div>
   //   </div>
   
-
-
-// $("#test").on("click", function (event) {
-//   console.log("this clicked");
-//   // var id = $(this).data("id");
-//   var id = $(this).attr("data-id");
-  
-//   // $.delete(`/delete/profile/${sessionUser.currentUser.id}
-//   // Send the DELETE request.
-//   $.ajax({
-//     type: "DELETE",
-//     url: "/delete/profile/" + id,
-//   }).then(
-//     function () {
-//       console.log("deleted profile", id);
-//       // Reload the page to get the updated list
-//       location.reload();
-//     }
-//   );
-// });

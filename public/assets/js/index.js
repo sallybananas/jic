@@ -90,7 +90,6 @@ $(`#new-sign-up`).on("click", function(event){
 				console.log(user);
 		$.post('/signup', user).then(function(res){
 			window.location.href = "/add.html"
-			
 		})
 
 	}else{
@@ -107,7 +106,6 @@ $(`#sign-in`).on("click", function (event) {
 
 	$.post('/api/login', user).then(function (res) {
 		window.location.href = "/main.html"
+	})	
 
-	})
-	
 });

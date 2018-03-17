@@ -1,38 +1,111 @@
-var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/just-in-case/upload/'
-var CLOUDINARY_UPLOAD_PRESET = 'tsabsfyg';
+$('.nav-toggle').click(function(){
+	$('body').toggleClass('nav-open');
 
-{/* <Image publicId="basketball_in_net.jpg" >
-  <Transformation width="200" height="300" gravity="auto" crop="fill" />
-</Image> */}
+	// $('.nav-main').attr('style', function(index, attr){
+	// 	return attr == "display:inline-grid !important;" ? "display: none;" : "display:inline-grid !important;";
+	// });
 
-// w_100,h_190,g_face,c_fill,q_auto/
+	$('.nav-main').toggleClass('off on');
+});
 
-var imgPreview = document.getElementById('photoPreview');
-var fileUpload = document.getElementById('photo');
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+});
 
-fileUpload.addEventListener('change', function (event) {
-    var file = event.target.files[0];
-    console.log(file)
-    // CLOUDINARY_URL + file;
-    var formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+// Modal Controls for loading on Document Ready
+// $(document).ready(function(){
+//     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+// $('#modal1').modal('open');
+// });
 
-    axios({
-        url: CLOUDINARY_URL,
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        data: formData
-    }).then(function (res) {
-        console.log(res);
-  
-        var formatPhotoUrl = `http://res.cloudinary.com/just-in-case/image/upload/w_100,h_190,g_face,c_fill,q_auto/${res.data.public_id}.jpg`
-        console.log(formatPhotoUrl);
-        imgPreview.src = formatPhotoUrl;
+// Modal Attrs
+$('.modal').modal({
+	dismissible: true, // Modal can be dismissed by clicking outside of the modal
+	opacity: .5, // Opacity of modal background
+	inDuration: 300, // Transition in duration
+	outDuration: 200, // Transition out duration
+	startingTop: '4%', // Starting top style attribute
+	endingTop: '10%', // Ending top style attribute
+	ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+	  alert("Ready");
+	  console.log(modal, trigger);
+	},
+	complete: function() { alert('Closed'); } // Callback for Modal close
+  }
+);
 
-    }).catch(function (err) {
-        console.error(err);
-    });
+$('.carousel.carousel-slider').carousel({fullWidth: true});
+
+$(document).ready(function(){
+	// the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+	$('#add-modal').modal('open');
+});
+
+$('.datepicker').pickadate({
+	selectMonths: true, // Creates a dropdown to control month
+	selectYears: 99, // Creates a dropdown of 15 years to control year,
+	today: 'Today',
+	clear: 'Clear',
+	close: 'Ok',
+	closeOnSelect: false // Close upon selecting a date,
+});
+
+function myFunction(id) {
+	console.log(document.getElementById(`${id}`).contentEditable)
+	var x = (document.getElementById(`${id}`).contentEditable = true)
+
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+	$('.preloader-background').delay(1700).fadeOut('slow');
+	
+	$('.preloader-wrapper')
+		.delay(1700)
+		.fadeOut();
+});
+
+$(document).ready(function(){
+	$('.tap-target').tapTarget('open');
+  });
+
+$(`#new-sign-up`).on("click", function(event){
+	event.preventDefault()
+	var firstNameDOM, lastNameDOM, emailDOM, emailConfirmDOM, passwordDOM, passwordConfirmDOM, user;
+
+	firstNameDOM = $('#first_name').val().trim();
+	lastNameDOM = $('#last_name').val().trim();
+	emailDOM = $('#email1').val().trim()
+	emailConfirmDOM = $('#email-confirm').val().trim();
+	passwordDOM = $('#password1').val().trim()
+	passwordConfirmDOM = $('#password-confirm').val().trim()
+	console.log(firstNameDOM, lastNameDOM, emailDOM, emailConfirmDOM, passwordConfirmDOM, passwordDOM);
+	if (emailDOM === emailConfirmDOM && passwordDOM === passwordConfirmDOM) {
+				user = {
+					first_name: firstNameDOM,
+					last_name: lastNameDOM,
+					email: emailDOM,
+					password: passwordDOM
+				}			
+				console.log(user);
+		$.post('/signup', user).then(function(res){
+			window.location.href = "/add.html"
+		})
+
+	}else{
+		console.log("username or email dont match");
+	}
+})
+
+$(`#sign-in`).on("click", function (event) {
+	event.preventDefault()
+	var user = {
+		email: $("#email").val().trim(),
+		password: $("#password").val().trim()
+	}
+
+	$.post('/api/login', user).then(function (res) {
+		window.location.href = "/main.html"
+	})	
+
 });

@@ -229,7 +229,7 @@ module.exports = function (app) {
 
     // app.get("/main/:id", profileController.find);
 
-    app.delete("/delete/profile", profileController.delete);
+    // app.delete("/delete/profile", profileController.delete);
     
     // app.put("/update/profile", profileController.update);
 

@@ -3,5 +3,5 @@
 module.exports = {
   User: require("./Users"),
   Profile: require("./profile"),
-  SubProfile: require("./Medical"),
+  Medical: require("./Medical"),
 };

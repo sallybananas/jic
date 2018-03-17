@@ -1,6 +1,7 @@
 const User = require('../models/Users');
 const Profile = require('../models/profile');
 
+// Functions for the MVC user db
 module.exports = {
     find: function(req, res) {
         User.findOne({

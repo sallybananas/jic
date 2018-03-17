@@ -74,7 +74,6 @@ $(document).ready(function () {
     // Submits a new post and brings user to page upon completion
 
     function submitProfile(newProfile) {
-
     }
   }
 });

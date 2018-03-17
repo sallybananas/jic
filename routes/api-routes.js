@@ -209,7 +209,6 @@ module.exports = function (app) {
 
     // app.get("/main/:id", profileController.find);
 
-
     // app.delete("/delete/profile", profileController.delete);
     
     // app.put("/update/profile", profileController.update);
@@ -223,7 +222,6 @@ module.exports = function (app) {
     // app.delete("/delete/medical", medicalController.delete);
     
     // app.put("/update/medical", medicalController.update);
-
 
     // console.log(res.json(data));
 
@@ -316,5 +314,4 @@ module.exports = function (app) {
     app.get("*", function (req, res) {
         res.redirect("/index.html")
     });
-
 }

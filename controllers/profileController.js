@@ -2,8 +2,7 @@ const Profile = require('../models/profile');
 const User = require('../models/Users');
 const exphbs = require("express-handlebars");
 
-
-
+// Functions for the MVC user db
 module.exports = {
     find: function(req, res) {
         // console.log(req);

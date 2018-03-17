@@ -7,24 +7,15 @@ const upload2 = multer();
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-// const cookieParser = require('cookie-parser');
 var mongoose = require("mongoose");
 
 const path = require('path');
 
-// //Express sessions
-// app.set('view engine', 'pug');
-// app.set('views', './views');
-
 var PORT = process.env.PORT || 3000;
-
-// Set Handlebars.
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload2.array());
-
-// app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname + '/public/assets/')));
 
@@ -93,7 +84,6 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 require("./routes/api-routes.js")(app);
-
 
 app.listen(PORT, function () {
     console.log("Listening on Port: ", PORT)

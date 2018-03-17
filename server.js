@@ -16,6 +16,10 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload2.array());
+app.use(cookieParser());
+app.use(session({ secret: "Your secret key",
+resave: true,
+saveUninitialized: true }));
 
 app.use(express.static(path.join(__dirname + '/public/assets/')));
 

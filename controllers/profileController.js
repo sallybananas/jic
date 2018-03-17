@@ -33,8 +33,8 @@ module.exports = {
     delete: function(req, res) {
         db.Profile.remove({
         _id: req.params.id
-        }).then(function(data) {
-        res.json(data);
+        }).then(function() {
+        res.redirect("main");
         }).catch(function(err) {
         res.json(err);
         });

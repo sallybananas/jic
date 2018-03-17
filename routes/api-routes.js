@@ -42,7 +42,7 @@ module.exports = function (app) {
 
     app.get("/api/main/:userId", profileController.find);
 
-    app.delete("/delete/profile", profileController.delete);
+    app.delete("/delete/profile/:profileId", profileController.delete);
 
     app.put("/update/profile", profileController.update);
 

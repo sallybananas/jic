@@ -12,7 +12,7 @@ $.get("/api/session").then(function (session) {
       var cardStackedDiv = $(`<div class="card-stacked"></div>`)
   
       var cardContentDiv = $(`<div class="card-content"></div>`)
-      var cardContentdelete = $('<i class="material-icons small right tooltipped" data-position="top" data-delay="50" data-tooltip="Delete my Account">remove_circle</i>')
+      var cardContentdelete = $('<i class="material-icons small right tooltipped" data-position="top" data-delay="50" data-tooltip="Delete my Account" data-id="${userData.Profile[i]._id}>remove_circle</i>')
       var cardContentH5 = $(`<h5 class="your-name">${userData.Profile[i].first_name ? userData.Profile[i].first_name : userData.first_name} ${userData.Profile[i].last_name ? userData.Profile[i].last_name : userData.last_name}</h5>`)
       var cardContentRow = $(`<div class="row"></div>`)
   
@@ -34,7 +34,7 @@ $.get("/api/session").then(function (session) {
   
       cardContentRow.append(cardContentRowDiv1).append(cardContentRowDiv2)
   
-      cardContentDiv.append(cardContentH5).append(cardContentRow)
+      cardContentDiv.append(cardContentdelete).append(cardContentH5).append(cardContentRow)
       cardStackedDiv.append(cardContentDiv).append(cardContentLastDiv)
   
   

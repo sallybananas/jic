@@ -130,20 +130,40 @@ module.exports = function (app) {
     //     }
     // });
 
+    // app.get('/logout', function (req, res) {
+    //     req.session.destroy(function () {
+    //         console.log("user logged out.")
+    //     });
+    //     res.redirect('/login');
+    // });
+
     app.get('/logout', function (req, res) {
-        req.session.destroy(function () {
-            console.log("user logged out.")
-        });
-        res.redirect('/login');
+        // req.session.user = {}
+        req.session.user.loggedIn = false;
+        req.session.user.isAdmin = false;
+        // res.json(req.session.user)
+        console.log("user logged out.");
+        res.redirect('/index');
     });
+
+
 
     app.get('/tour.html', function (req, res) {
         res.sendFile(path.join(__dirname + '/../public/tour.html'));
     });
 
+    app.get('/profile.html', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../public/profile.html'));
+    });
+
+
     app.get('/tour', function (req, res) {
         res.sendFile(path.join(__dirname + '/../public/tour.html'));
     });
+
+    // app.get('/logout', function (req, res) {
+    //     res.sendFile(path.join(__dirname + '/../public/index.html'));
+    // });
 
     app.get('/index.html', function (req, res) {
         res.sendFile(path.join(__dirname + '/../public/index.html'));

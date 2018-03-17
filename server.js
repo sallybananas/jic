@@ -22,12 +22,6 @@ var PORT = process.env.PORT || 3000;
 
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,7 +37,6 @@ app.use(express.static(path.join(__dirname + '/public/assets/')));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-require("./routes/api-routes.js")(app);
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/jic";
 
@@ -67,9 +60,7 @@ app.set('trust proxy', 1)
 app.use(session({
     secret: process.env.SESSIONSECRET || 'jic',
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true },
-    store: new MongoStore({ mongooseConnection: db })
+    saveUninitialized: true
 }))
 
 
@@ -80,10 +71,7 @@ function userSetup(req, res, next) {
             id: null,
             first_name: '',
             last_name: '',
-            email: '',
-            email1: '',
-            password: '',
-            password1: ''
+            email: ''
         }
         req.session.user.loggedIn = false;
         req.session.user.isAdmin = false;
@@ -95,10 +83,10 @@ app.use(userSetup)
 // Authentication and Authorization Middleware
 var auth = function (req, res, next) {
     if (req.session.email === db.user.email) 
-        return next();
-
+    return next();
+    
     else
-        return res.sendStatus(401);
+    return res.sendStatus(401);
 };
 
 
@@ -107,12 +95,16 @@ var auth = function (req, res, next) {
 app.get('/', function (req, res, next) {
     console.log("Server.js Session", req.session);
     
-
+    
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
+var exphbs = require("express-handlebars");
 
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
+require("./routes/api-routes.js")(app);
 
 
 app.listen(PORT, function () {

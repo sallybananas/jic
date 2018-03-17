@@ -8,10 +8,11 @@ module.exports = {
     find: function(req, res) {
         // console.log(req);
         console.log("req.params: ", req.body.id);
-        Profile.findById(req.body.id).then(function(data) {
+        User.findById(req.params.userId).populate("Profile").then(function(data) {
+            
         // res.json(data);
         console.log(data);
-        res.render("profile", { profiles: data });
+        res.json(data)
         // res.send("profile", { profiles: data });
         }).catch(function(err) {
         res.json(err);
